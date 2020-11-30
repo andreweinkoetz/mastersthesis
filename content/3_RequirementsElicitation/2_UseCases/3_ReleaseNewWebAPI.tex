@@ -1,0 +1,40 @@
+\subsubsection{Provide Migration Guide and IDL document}
+\label{subsubsec:UseCase:MigGuideIDL}
+
+\vspace{-2mm}
+\begin{center}
+    \def\arraystretch{1.5}
+    \begin{longtable}{ p{0.22\linewidth} p{0.72\linewidth} }
+    \hline
+        \textit{Source} & Web API provider\\
+    \hline
+        \textit{Stimulus} & New functionality was added to the Web API or existing behavior was changed. Therefore, a new version of the Web API is released. \\
+    \hline
+    	\textit{Environment} & \textbf{Preconditions:} Provider introduced breaking changes to the exposed interface or behavior when modifying the Web API.
+    	
+    	\textbf{Postcondition:} Output needs to be published on a publicly accessible server and its URI has to be provided to Web API consumers.
+    	\\
+    \hline
+    	\textit{Artefact} & Migration guide, IDL document\\
+    \hline
+    \textit{Response} &
+    \vspace{-5.1mm}
+    \begin{enumerate}[itemindent=-9pt, leftmargin=14pt, itemsep=0pt, align=left]
+    	\item IDL document must describe the publicly exposed interface and behavior. The Web API provider can either manually create this document or generate it using tools.
+    	\item Migration guide must contain the type of IDL used to describe the Web API.
+    	\item Migration guide must contain the type of Web API.
+    	\item Migration guide must contain both the previous and the current version number according to the semantic versioning principles.
+    	\item Migration guide can contain a short textual summary to provide an overview of the changes introduced in the current version.
+    	\item Migration guide must contain a list of all breaking changes introduced in the current version. 
+    \end{enumerate} \\ [-5mm]
+    \hline
+    \textit{Response Measure} &
+    \vspace{-8.5mm}
+    \begin{itemize}[itemindent=-9pt, leftmargin=14pt, itemsep=0pt, align=left]
+       	\item Success: Migration guide can be retrieved and parsed by migration tool.
+       	\item Success: IDL document can be retrieved and parsed by migration tool.
+        \vspace{-5mm}
+    \end{itemize}\\
+    \hline
+    \end{longtable}
+\end{center}

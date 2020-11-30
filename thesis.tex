@@ -1,0 +1,89 @@
+%%%%%%%%%%%%%%%%%%%
+%  placeholders
+%%%%%%%%%%%%%%%%%%%
+
+% chair name not allowed at Department of Informatics
+% remove \phantom{} if you want the chair name on the cover
+\newcommand{\chair}{\phantom{Chair for Applied Software Engineering}}
+\newcommand{\faculty}{TUM Department of Informatics}
+\newcommand{\uni}{Technical University of Munich}
+\newcommand{\studycourse}{Informatics}
+
+\newcommand{\authorname}{Andre Weinkötz}
+\newcommand{\city}{Munich}
+
+\newcommand{\thesistype}{Master's Thesis}
+\newcommand{\worktype}{\thesistype\space in Informatics}
+\newcommand{\titleFirstLanguage}{A Process Model for Client Migration after Service Changes in Distributed Systems}
+\newcommand{\titleForeignLanguage}{Ein Prozessmodell für Anwendungsmigrationen nach Service Änderungen in verteilten Systemen}
+
+\newcommand{\supervisor}{Prof. Dr. Bernd Brügge}
+\newcommand{\advisor}{Paul Schmiedmayer, M. Sc.}
+
+% set date manually or use \today
+\newcommand{\submissionDate}{January 15, 2020}
+
+
+
+%%%%%%%%%%%%%%%%%%%
+%    settings
+%%%%%%%%%%%%%%%%%%%
+
+% quick settings
+\def\printstyle{twosided}
+%\def\monochromeCover{} % uncomment if you prefer a black TUM logo on the cover
+
+% complete settings & packages: see settings.text
+\input{settings} 
+
+
+
+%%%%%%%%%%%%%%%%%%%
+%  main document
+%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\frontmatter
+
+\include{titelpage/titlepage}
+\include{titelpage/titlepage_inside}
+\clearpage\mbox{}\clearpage
+
+\include{declaration/declaration}
+\clearpage\mbox{}\clearpage
+
+\pagenumbering{roman}
+\include{frontmatter/abstract}
+\include{frontmatter/acknowledgements}
+
+\tableofcontents
+
+\include{frontmatter/acronyms}
+
+\mainmatter
+
+\include{content/1_Introduction}
+\include{content/2_RelatedWork}
+\include{content/3_RequirementsElicitation}
+\include{content/5_SystemDesign}
+\include{content/6_ObjectDesign}
+\include{content/7_CaseStudyEvaluation}
+\include{content/8_Summary}
+
+\backmatter
+
+% List of figures
+\listoffigures
+% List of tables
+\listoftables
+% List of source code listings
+\lstlistoflistings
+% Your Bibliography
+\bibliography{references.bib}
+
+\appendix
+
+\include{appendix/appendixExample}
+
+\end{document}

@@ -1,0 +1,60 @@
+This is BibTeX, Version 0.99d (TeX Live 2020)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: thesis.aux
+The style file: alpha.bst
+A level-1 auxiliary file: titelpage/titlepage.aux
+A level-1 auxiliary file: titelpage/titlepage_inside.aux
+A level-1 auxiliary file: declaration/declaration.aux
+A level-1 auxiliary file: frontmatter/abstract.aux
+A level-1 auxiliary file: frontmatter/acknowledgements.aux
+A level-1 auxiliary file: frontmatter/acronyms.aux
+A level-1 auxiliary file: content/1_Introduction.aux
+A level-1 auxiliary file: content/2_RelatedWork.aux
+A level-1 auxiliary file: content/3_RequirementsElicitation.aux
+A level-1 auxiliary file: content/5_SystemDesign.aux
+A level-1 auxiliary file: content/6_ObjectDesign.aux
+A level-1 auxiliary file: content/7_CaseStudyEvaluation.aux
+A level-1 auxiliary file: content/8_Summary.aux
+A level-1 auxiliary file: appendix/appendixExample.aux
+Database file #1: references.bib
+You've used 14 entries,
+            2543 wiz_defined-function locations,
+            671 strings with 8524 characters,
+and the built_in function-call counts, 7373 in all, are:
+= -- 757
+> -- 394
+< -- 11
++ -- 139
+- -- 139
+* -- 543
+:= -- 1175
+add.period$ -- 53
+call.type$ -- 14
+change.case$ -- 96
+chr.to.int$ -- 14
+cite$ -- 14
+duplicate$ -- 303
+empty$ -- 505
+format.name$ -- 153
+if$ -- 1575
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 17
+newline$ -- 74
+num.names$ -- 45
+pop$ -- 101
+preamble$ -- 1
+purify$ -- 112
+quote$ -- 0
+skip$ -- 257
+stack$ -- 0
+substring$ -- 388
+swap$ -- 88
+text.length$ -- 11
+text.prefix$ -- 1
+top$ -- 0
+type$ -- 96
+warning$ -- 0
+while$ -- 71
+width$ -- 15
+write$ -- 210

@@ -1,0 +1,50 @@
+\subsubsection{Example Use Case}
+\label{subsubsec:UseCase:ExampleUseCase}
+
+\textit{Short general description of the use case. Use the table below as a template. Replace all CAPITAL LETTER PLACEHOLDERS with the content of the use case. The following list gives you some context to the different parts that describe a use case according to \cite{bass_software_2013}}
+\textit{
+    \begin{itemize}
+        \item \textbf{Source / Source of stimulus}: The internal or external actor that generates the stimulus and how that actor is associated with the system.
+        \item \textbf{Stimulus}: The event that arrives at the system. This can e.g., be an input, crash, or failure that requires a response from the system.
+        \item \textbf{Environment}: The conditions such as preconditions and postconditions as well as invariants under which the stimulus requires a response. Examples for this can be normal operation, startup, shutdown, repair mode, or any previous clearly defined state.
+        \item \textbf{Artefact}: The part of the system to which the use case applies. This might be the whole system or a subcomponent that reacts to the stimulus.
+        \item \textbf{Response}: Specify how the system should respond to a stimulus. You can describe the response as a flow of events. These responses either consist of the responsibilities of the 
+        \begin{itemize}
+            \item system to perform a response for the stimulus (for runtime use cases) 
+            \item developer to perform a response for the stimulus (for development-time use cases)
+        \end{itemize}
+        \item \textbf{Response Measure}: Measures that can be used to test the requirement and evaluate of your system satisfies this use case. You should evaluate this in the \nameref{ch:ObjectDesign} chapter using unit tests, system tests, and integration tests.
+    \end{itemize}
+}
+
+\vspace{-2mm}
+\begin{center}
+    \def\arraystretch{1.5}
+    \begin{longtable}{ p{0.22\linewidth} p{0.72\linewidth} }
+    \hline
+        \textit{Source} & \textsf{SOURCE}\\
+    \hline
+        \textit{Stimulus} & \textsf{STIMULUS}\\
+    \hline
+    	\textit{Environment} & \textsf{ENVIRONMENT}\\
+    \hline
+    	\textit{Artefact} & \textsf{ARTEFACT}\\
+    \hline
+    \textit{Response} &
+    \vspace{-5.1mm}
+    \begin{enumerate}[itemindent=-9pt, leftmargin=14pt, itemsep=0pt, align=left]
+        \item FIRST EVENT
+        \item SECOND EVENT
+        \item THIRD EVENT
+    \end{enumerate} \\ [-5mm]
+    \hline
+    \textit{Response Measure} &
+    \vspace{-8.5mm}
+    \begin{itemize}[itemindent=-9pt, leftmargin=14pt, itemsep=0pt, align=left]
+       	\item RESPONSE MEASURE
+       	\item RESPONSE MEASURE
+        \vspace{-5mm}
+    \end{itemize}\\
+    \hline
+    \end{longtable}
+\end{center}

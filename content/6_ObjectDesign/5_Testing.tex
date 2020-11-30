@@ -1,0 +1,92 @@
+\section{Testing}
+\label{sec:Testing}
+
+Testing ensures that all requirements defined in Section \ref{sec:Requirements} and use cases detailed in Section \ref{sec:UseCases} are fulfilled. Therefore, unit tests are specified that test all components of our subsystems in isolation. Furthermore, our integration tests demonstrate the faultless interaction between our subsystems. System tests are defined to ensure that the fully integrated application produces the correct output for various inputs. The testing strategy of our proposed system is subsequently described in a structured manner according to these types of tests.
+
+\paragraph{Unit testing} Unit tests are used to find faults in subsystems with respect to use cases from use case models \cite{bruegge_object-oriented_2010}. Any subsystem for which a custom implementation is preferred over using a third-party component requires extensive testing.
+
+Testing \texttt{UC1}, all subsystems affected by integrating our system are tested in isolation. Various IDL documents must be used as an input for the \texttt{IDL} \texttt{Importer} subsystem which determines their validity and provides the parsed document. While correct IDL specifications are processed without interruption, invalid or incomplete IDL documents raise an error message in the component which is forwarded to the user. Test cases need to be defined for each type of IDL that is supported by the system. For testing the \texttt{IDL} \texttt{Conversion} subsystem, examplatory parsed entites of IDL documents are used to find faults in the conversion algorithm. Its expected output is manually defined and validated based on the emitted source code entities. When the system is set up for the first time, a new facade must be created without migrated changes. Hence, the \texttt{Source\-Code} \texttt{Importer} targets the generated library code in order to create source code entities. Testing this process requires examplatory source code files in various programming languages that are validated based on previously defined source code entities. Empty or invalid files raise a parsing exception. Producing the textual representation of source code needs to be validated by testing the algorithm of the \texttt{Code} \texttt{Generation} subsystem for each supported programming language. Therefore, example collections of source code entities are used as an input that are transformed into strings of source code in the respective language. The unformatted source code strings are formatted by the \texttt{Persisting} \texttt{Manager} subsystem which is tested by validating the formatted source code based on predefined examples. 
+
+\renewcommand{\arraystretch}{1.5}
+\begin{table*}[ht]
+	\begin{center}
+		\begin{tabular}{|>{\raggedright\arraybackslash}m{4cm}|>{\raggedright\arraybackslash}m{5cm}|>{\raggedright\arraybackslash}m{5cm}|}
+			\hline
+			\begin{center}
+				\textbf{Subsystem/ Component}
+			\end{center} &  \begin{center}
+			\textbf{Input} 
+		\end{center}&  \begin{center}
+		\textbf{Output}
+	\end{center} \\ \hline
+			\textit{IDL Importer} & Invalid or incomplete IDL document & Error message \\ \hline
+			\textit{IDL Importer} & Valid IDL document & Parsed IDL document \\ \hline
+			\textit{IDL Conversion} & Parsed IDL document & Source code entities \\ \hline
+			\textit{SourceCode Importer} & Compilable source code  files & Source code entities \\ \hline
+			\textit{SourceCode Importer} & Uncompilable source code files & Error message \\ \hline
+			\textit{SourceCode Importer} & Source code entities & Unformatted, compilable source code strings  \\ \hline
+			\textit{Code Formatting} & Unformatted, compilable source code strings & Formatted source code strings  \\ \hline
+		\end{tabular}
+		\caption{Input and output of subsystem unit tests for UC1}\label{tbl:UnitTestsUC1}
+	\end{center}
+\end{table*}
+
+Testing the automated migration is required to detect faults during the upgrade of client source code after the Web API changed (\texttt{UC4}). In addition to the ones defined for \texttt{UC1}, test cases need to be specified that cover importing a machine-readable migration guide and the adaption of the facade to the changes it contains. Since the migration guide is structured using \ac{JSON}, unit tests for the \texttt{Migration} \texttt{Guide} \texttt{Importer} subsystem are performed by the developers of the third-party component. Migrating a previous facade must focus all types of migrations. Additionally, test cases need to be defined for combining different types of changes targeting the same object. Testing this subsystem requires providing example migration guides and manually specified source code entities of a previous facade as an input. Validation is performed by matching the migrated source code entities to predefined end-results. By creating unsolvable \texttt{Migrations}, edge cases can be simulated that result in error messages which need to be forwarded to the user. For example, adding a new parameter to a model of the Web API is unsupported and raises an error message. The message contains information about the type of change, the target object, and a reason for the fault. Incomplete \texttt{Migrations}, i.e. \texttt{Migrations} that do not contain a change, must not be created and result in an unsolvable \texttt{Migration}.
+
+\begin{table*}[ht]
+	\begin{center}
+		\begin{tabular}{|>{\raggedright\arraybackslash}m{4cm}|>{\raggedright\arraybackslash}m{5cm}|>{\raggedright\arraybackslash}m{5cm}|}
+			\hline
+			\begin{center}
+				\textbf{Subsystem/ Component}
+			\end{center} &  \begin{center}
+				\textbf{Input} 
+			\end{center}&  \begin{center}
+				\textbf{Output}
+			\end{center} \\ \hline
+			\multirow{2}{*}{\textit{Migration Manager}} & Parsed migration guide with changes of multiple target objects & \multirow{2}{5cm}{Migrated source code entities}  \\
+			& Source code entities &  \\ \hline
+						\multirow{2}{*}{\textit{Migration Manager}} & Parsed migration guide with multiple changes of a single target object & \multirow{2}{5cm}{Migrated source code entities}  \\
+			& Source code entities &  \\ \hline
+						\multirow{2}{*}{\textit{Migration Manager}} & Parsed migration guide with invalid changes & \multirow{2}{5cm}{Unsolvable Migration object}  \\
+			& Source code entities &  \\ \hline
+		\end{tabular}
+		\caption{Additional input and output of subsystem unit tests for UC4}\label{tbl:UnitTestsUC4}
+	\end{center}
+\end{table*}
+
+\paragraph{Integration testing} The subsequent tests are used to find faults by testing individual components in combination \cite{bruegge_object-oriented_2010}. Therefore, the public interfaces of the individual components are used to provide the input for the consuming components. Integration tests must be specified for all subsystems, including subsystems that use third-party components.
+
+Identifying faults in the process of generating library code from an \ac{IDL} document requires testing the \texttt{IDL} \texttt{Importer}, \texttt{Library} \texttt{Generation} and \texttt{Code} \texttt{Generation} subsystems. Various \ac{IDL} documents are provided as an input. The results are validated by comparing the generated source code with predefined test examples in multiple programming languages. IDL documents of different types that describe the same Web API must produce the same source code, depending on the programming language. 
+
+For testing the migration process, the interaction of the \texttt{Migration} \texttt{Guide} \texttt{Im\-por\-ter}, \texttt{Migration} \texttt{Manager}, \texttt{Source\-Code} \texttt{Importer} and \texttt{Code} \texttt{Ge\-ne\-ra\-tion} subsystems must be analyzed. Source code files of an examplatory facade and a corresponding migration guide file are mandatory inputs. For identifying any faults, predefined examples for multiple programming languages are compared against the generated output. By combining different changes, some of them targeting the same object, errors caused by contradicting or incompatible information can be detected. 
+
+\begin{table*}[ht]
+	\begin{center}
+		\begin{tabular}{|>{\raggedright\arraybackslash}m{4cm}|>{\raggedright\arraybackslash}m{5cm}|>{\raggedright\arraybackslash}m{5cm}|}
+			\hline
+			\begin{center}
+				\textbf{Subsystem/ Component}
+			\end{center} &  \begin{center}
+				\textbf{Input} 
+			\end{center}&  \begin{center}
+				\textbf{Output}
+			\end{center} \\ \hline
+			\textit{IDL Importer} & \multirow{3}{5cm}{Valid IDL document} & \multirow{3}{5cm}{Unformatted, compilable source code strings}   \\
+			 \textit{Library Generation} &  &  \\
+			 \textit{Code Generation} &  &  \\ \hline
+			 			\textit{Migration Guide Importer} & Compilable source code files & \multirow{4}{5cm}{Unformatted, compilable source code strings}   \\
+			 \textit{Migration Manager} & Migration guide with multiple changes of multiple target objects &  \\
+			 \textit{SourceCode Importer} & \multirow{2}{*}{}  &  \\
+			 \textit{Code Generation} &  &  \\ \hline
+		\end{tabular}
+		\caption{Input and output of subsystem integration tests}\label{tbl:IntegrationTests}
+	\end{center}
+\end{table*}
+
+
+\paragraph{System testing} System testing tests all the components together, seen as a single system to identify faults regarding functionality, performance issues and user related problems \cite{bruegge_object-oriented_2010}. 
+
+For testing the systems functionality, its command line interface is used to set different configuration options and produce a library for accessing a Web API. The system works as defined if the emitted code compiles and is able to communicate with the Web API. Error messages issued by the Web API, e.g. in the event of unauthorized access, do not represent a system failure. When integrated into the CI/CD pipeline of a client application, the system uses a preset configuration to produce the library code every time its stage is executed.
+
+Performance tests ensure, that all nonfunctional requirements and design goals are fulfilled \cite{bruegge_object-oriented_2010}. Missing mandatory configuration parameters must result in error messages displayed by the \ac{CLI}. The system provides a parameter to list all parameters and other helpful advice. Important messages must be colored to clearly emphasize their information. The generated library code must be formatted according to the user's ruleset and contains documentation derived from the \ac{IDL} document. All code emitted in a specific programming language must use the syntax elements of its latest major version.

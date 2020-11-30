@@ -1,0 +1,27 @@
+\babel@toc {english}{}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Cumbersome workflow after web service changes\relax }}{3}{figure.caption.11}%
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Workflow with tool support after web service changes\relax }}{4}{figure.caption.13}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Proposed structure of a machine-readable migration guide\relax }}{13}{figure.caption.14}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Proposed architecture of change-proof Web API integration\relax }}{14}{figure.caption.15}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Use cases of Web API consumers\relax }}{17}{figure.caption.16}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Use cases of Web API providers\relax }}{20}{figure.caption.20}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Subsystem decomposition\relax }}{28}{figure.caption.29}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Subsystem decomposition in an Apple ecosystem\relax }}{31}{figure.caption.30}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Class diagram of IDL importer subsystem\relax }}{37}{figure.caption.41}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Class diagram of source code entity artifact\relax }}{38}{figure.caption.42}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Class diagram of code importer subsystem\relax }}{38}{figure.caption.44}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Class diagram of migration guide artifact\relax }}{39}{figure.caption.45}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Class diagram of migration manager subsystem\relax }}{40}{figure.caption.47}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Class diagram of code generator subsystem\relax }}{41}{figure.caption.48}%
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Class diagram of persisting manager subsystem\relax }}{42}{figure.caption.49}%
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Restructured subsystem decomposition - The \texttt {Code Generation} subsystem was extracted from the \texttt {Migration Manager} and \texttt {Library Generation} subsystems to provide a uniform interface to both subsystems\relax }}{44}{figure.caption.50}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }

@@ -1,0 +1,39 @@
+\subsubsection{Integrate Migration Tool}
+\label{subsubsec:UseCase:IntegrateTool}
+
+\vspace{-2mm}
+\begin{center}
+    \def\arraystretch{1.5}
+    \begin{longtable}{ p{0.22\linewidth} p{0.72\linewidth} }
+    \hline
+        \textit{Source} & Web API consumer\\
+    \hline
+        \textit{Stimulus} & Client application needs to incorporate and persist a Web API. \\
+    \hline
+    	\textit{Environment} & \textbf{Preconditions:} The client application uses a CI / CD pipeline into which the migration tool can be integrated. The interface of the desired Web API is described using an IDL document.
+    	
+    	\textbf{Postcondition:} The resulting library must be added as a dependency to the client application.
+    	\\
+    \hline
+    	\textit{Artefact} & Migration tool\\
+    \hline
+    \textit{Response} &
+    \vspace{-5.1mm}
+    \begin{enumerate}[itemindent=-9pt, leftmargin=14pt, itemsep=0pt, align=left]
+    	\item The migration tool gets integrated as part of the CI/CD pipeline of the client application. Therefore, its configuration is either provided as a file via URI or via \ac{CLI} parameters. Optionally, a code formatting ruleset can be specified via its configuration file URI.
+        \item The migration tool retrieves the IDL document from its URI.
+        \item The migration tool parses the information from the IDL document and generates library code encapsulating lower level HTTP calls. This code is for internal use only and cannot be accessed publicly.
+        \item The migration tool generates a public facade layer to persist the current view on the Web API by abstracting calls to the previously generated library code. 
+        \item The migration tool generates related meta files to facilitate integrating the output via dependency management.
+    \end{enumerate} \\ [-5mm]
+    \hline
+    \textit{Response Measure} &
+    \vspace{-8.5mm}
+    \begin{itemize}[itemindent=-9pt, leftmargin=14pt, itemsep=0pt, align=left]
+       	\item Error: Execution fails if the IDL document is unavailable or incorrect.
+       	\item Success: Output compiles and requests/responses to/from the Web API are processed without errors. 
+        \vspace{-5mm}
+    \end{itemize}\\
+    \hline
+    \end{longtable}
+\end{center}

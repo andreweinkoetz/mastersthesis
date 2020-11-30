@@ -1,0 +1,39 @@
+\section{Implementation}
+\label{sec:Implementation}
+
+For evaluating the proposed system, we created \textit{Pallidor} a prototypical implementation using the Swift programming language. It is composed of multiple subsystems that are developed and maintained as standalone Swift packages. In addition to our own implementations, third-party components are integrated using the Swift Package Manager. All packages are published under an open-source license. Their source code is publicly available in their respective repositories on Github. Pallidor is composed of three Swift packages that are combined in an executable that provides a commandline user interface. The \textit{PallidorGenerator} package implements the subsystems \texttt{IDL Importer} and \texttt{IDL Conversion}. The \textit{PallidorMigrator} package integrates the functionality of the \texttt{Migration Manager}, \texttt{Migration Guide Importer} and \texttt{SourceCode Importer} subsystems. The \textit{Pallidor} package contains the commandline user interface and the \texttt{Persisting Manager} subsystem. For the individual components, we identified several open-source Swift packages that provide the required functionality.
+
+\renewcommand{\arraystretch}{1.4}
+\begin{table*}[ht]
+	\begin{center}
+		\begin{tabular}{|>{\centering\arraybackslash}m{2.7cm}|>{\centering\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{3.2cm}|>{\centering\arraybackslash}m{4cm}|}
+			\hline
+			\begin{center}
+				\textbf{Subsystem/ Component}
+			\end{center} &  \begin{center}
+				\textbf{Swift Package Name} 
+			\end{center}&  \begin{center}
+				\textbf{Swift Package Version}
+			\end{center} &
+		 \begin{center}
+			\textbf{Swift Package Author / Publisher}
+		\end{center} \\ \hline
+			\textit{IDL Importer} & OpenAPIKit & 2.0.0 \newline (Sep. 28th, 2020) &
+			Mathew Polzin \\ \hline
+			\textit{Source Code Importer} & Sourcery & 1.0.0 \newline (Aug. 14th, 2020) &
+			Krzysztof Zabłocki \\ \hline
+			\textit{Code Formatter} & swift-format & 0.50300.0 \newline (Sep. 19th, 2020) &
+			Apple, Inc. \\ \hline
+		\end{tabular}
+		\caption{Third-party Swift packages used for subsystems in Pallidor}\label{tbl:PallidorDep}
+	\end{center}
+\end{table*}
+
+Since Pallidor is a prototype, its functionality is limited to generating a persistent Swift package from an OpenAPI specification. It can be integrated in client applications using Swift in version 5.2 or later. Since our generated Swift package uses Apple's \texttt{Combine}\footnote{https://developer.apple.com/documentation/combine} framework, the client application's execution environment must be at least iOS 13 or MacOS 10.15. 
+
+\begin{itemize}
+	\item OAI spec can not nest schemas
+	\item other restrictions to specs (must define success return value), needs consistency with actual API (not string error defined but json msg returned)
+	\item OAIGenerator drawbacks and why we cant use it?
+\end{itemize}
+

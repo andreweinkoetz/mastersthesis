@@ -1,0 +1,18 @@
+\chapter{System Design}
+\label{ch:SystemDesign}
+
+After analyzing functional and non-functional requirements, identifying use cases and possible usage scenarios, this chapter focusses on creating a system design model derived from the specifications of the analysis model. The resulting system design artifact forms the foundation for the subsequent object design analysis.
+
+In order to achieve the best possible quality of our proposed system and its output, the criteria identified from Section \ref{sec:Requirements} must be evaluated and balanced with regard to their applicability. Demands that have not been considered up to now as well as contradicting requirements must be incorporated or resolved. Therefore, the design goals of our system are defined in section \ref{sec:DesignGoals} and prioritized to maximizie the possible benefit for all stakeholders. 
+
+Considering all functionality and quality criteria defined during requirements analysis results in a complex system that is difficult to develop and maintain as a whole. In order to distribute the workload among development teams and to facilitate training of new team members, subsystems need to be identified that support a clear separation of concerns and can be maintained independently. We identified a composition of subsystems in which each subsystem provides well-defined interfaces to its encapsulated internal functionality. Section \ref{fig:subsystemDecomposition} contains the details of the interactions between subsystems and gives an overview of the modular architecture of our proposed system.
+
+Our system is supposed to be executed as an additional step during the build stage in an existing CI/CD pipeline. While it is designed to run automatically, various boundary conditions require manual interaction of the user in order to resolve errors in the configuration or during runtime. Integrating the system into an existing CI/CD pipeline and troubleshooting for occuring errors is described in detail in Section \ref{sec:BoundaryConditions}.
+
+In Section \ref{sec:HardwareSoftwareMapping} an exemplatory execution environment is used to demonstrate the flexibility of the subsystem decomposition. Therefore, its abstract components are mapped to representational subsystems that could be applied in this execution environment. In addition, all modified services and resulting artifacts are described in detail.
+\newpage
+\input{content/5_SystemDesign/1_DesignGoals}
+\newpage
+\input{content/5_SystemDesign/2_SubsystemDecomposition}
+\input{content/5_SystemDesign/3_BoundaryConditions}
+\input{content/5_SystemDesign/4_HardwareSoftwareMapping}

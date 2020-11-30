@@ -1,0 +1,107 @@
+\newcommand{\etalchar}[1]{$^{#1}$}
+\begin{thebibliography}{XBHV17}
+
+\bibitem[BCK13]{bass_software_2013}
+Len Bass, Paul Clements, and Rick Kazman.
+\newblock {\em Software Architecture in Practice}.
+\newblock {{SEI}} Series in Software Engineering. {Addison-Wesley}, {Upper
+  Saddle River, NJ}, 3rd ed edition, 2013.
+
+\bibitem[BD10]{bruegge_object-oriented_2010}
+Bernd Bruegge and Allen~H. Dutoit.
+\newblock {\em Object-Oriented Software Engineering: Using {{UML}}, Patterns,
+  and {{Java}}}.
+\newblock {Prentice Hall}, {Boston}, 3rd ed edition, 2010.
+
+\bibitem[BVXH20]{brito_you_2020}
+Aline Brito, Marco~Tulio Valente, Laerte Xavier, and Andre Hora.
+\newblock You broke my code: Understanding the motivations for breaking changes
+  in {{APIs}}.
+\newblock {\em Empirical Software Engineering}, 25(2):1458--1492, March 2020.
+
+\bibitem[DCMJ06]{hutchison_automated_2006}
+Danny Dig, Can Comertoglu, Darko Marinov, and Ralph Johnson.
+\newblock Automated {{Detection}} of {{Refactorings}} in {{Evolving
+  Components}}.
+\newblock In David Hutchison, Takeo Kanade, Josef Kittler, Jon~M. Kleinberg,
+  Friedemann Mattern, John~C. Mitchell, Moni Naor, Oscar Nierstrasz,
+  C.~Pandu~Rangan, Bernhard Steffen, Madhu Sudan, Demetri Terzopoulos, Dough
+  Tygar, Moshe~Y. Vardi, Gerhard Weikum, and Dave Thomas, editors, {\em
+  {{ECOOP}} 2006 \textendash{} {{Object}}-{{Oriented Programming}}}, volume
+  4067, pages 404--428. {Springer Berlin Heidelberg}, {Berlin, Heidelberg},
+  2006.
+
+\bibitem[EB18]{eilertsen_exploring_2018}
+Anna~Maria Eilertsen and Anya~Helene Bagge.
+\newblock Exploring {{API}}: Client co-evolution.
+\newblock In {\em Proceedings of the 2nd {{International Workshop}} on {{API
+  Usage}} and {{Evolution}} - {{WAPI}} '18}, pages 10--13, {Gothenburg,
+  Sweden}, 2018. {ACM Press}.
+
+\bibitem[EZG14]{espinha_web_2014}
+Tiago Espinha, Andy Zaidman, and Hans-Gerhard Gross.
+\newblock Web {{API}} growing pains: {{Stories}} from client developers and
+  their code.
+\newblock In {\em 2014 {{Software Evolution Week}} - {{IEEE Conference}} on
+  {{Software Maintenance}}, {{Reengineering}}, and {{Reverse Engineering}}
+  ({{CSMR}}-{{WCRE}})}, pages 84--93, {Antwerp, Belgium}, February 2014.
+  {IEEE}.
+
+\bibitem[FP11]{fowler_domain-specific_2011}
+Martin Fowler and Rebecca Parsons.
+\newblock {\em Domain-Specific Languages}.
+\newblock {Addison-Wesley}, {Upper Saddle River, NJ}, 2011.
+
+\bibitem[Gam95]{gamma_design_1995}
+Erich Gamma, editor.
+\newblock {\em Design Patterns: Elements of Reusable Object-Oriented Software}.
+\newblock Addison-{{Wesley}} Professional Computing Series. {Addison-Wesley},
+  {Reading, Mass}, 1995.
+
+\bibitem[HD05]{henkel_catchup!_2005}
+Johannes Henkel and Amer Diwan.
+\newblock {{CatchUp}}! capturing and replaying refactorings to support {{API}}
+  evolution.
+\newblock In {\em Proceedings of the 27th International Conference on
+  {{Software}} Engineering}, {{ICSE}} '05, pages 274--283, {St. Louis, MO,
+  USA}, May 2005. {Association for Computing Machinery}.
+
+\bibitem[KFJA19]{koci_classification_2019}
+Rediana Koci, Xavier Franch, Petar Jovanovic, and Alberto Abello.
+\newblock Classification of {{Changes}} in {{API Evolution}}.
+\newblock In {\em 2019 {{IEEE}} 23rd {{International Enterprise Distributed
+  Object Computing Conference}} ({{EDOC}})}, pages 243--249, {Paris, France},
+  October 2019. {IEEE}.
+
+\bibitem[LXLZ13]{li_how_2013}
+Jun Li, Yingfei Xiong, Xuanzhe Liu, and Lu~Zhang.
+\newblock How {{Does Web Service API Evolution Affect Clients}}?
+\newblock In {\em 2013 {{IEEE}} 20th {{International Conference}} on {{Web
+  Services}}}, pages 300--307, {Santa Clara, CA, USA}, June 2013. {IEEE}.
+
+\bibitem[LZP{\etalchar{+}}19]{lubke_interface_2019}
+Daniel L{\"u}bke, Olaf Zimmermann, Cesare Pautasso, Uwe Zdun, and Mirko
+  Stocker.
+\newblock Interface evolution patterns: Balancing compatibility and
+  extensibility across service life cycles.
+\newblock In {\em Proceedings of the 24th {{European Conference}} on {{Pattern
+  Languages}} of {{Programs}} - {{EuroPLop}} '19}, pages 1--24, {Irsee,
+  Germany}, 2019. {ACM Press}.
+
+\bibitem[NN10]{nita_using_2010}
+Marius Nita and David Notkin.
+\newblock Using twinning to adapt programs to alternative {{APIs}}.
+\newblock In {\em Proceedings of the 32nd {{ACM}}/{{IEEE International
+  Conference}} on {{Software Engineering}} - {{Volume}} 1}, {{ICSE}} '10, pages
+  205--214, {Cape Town, South Africa}, May 2010. {Association for Computing
+  Machinery}.
+
+\bibitem[XBHV17]{xavier_historical_2017}
+Laerte Xavier, Aline Brito, Andre Hora, and Marco~Tulio Valente.
+\newblock Historical and impact analysis of {{API}} breaking changes: {{A}}
+  large-scale study.
+\newblock In {\em 2017 {{IEEE}} 24th {{International Conference}} on {{Software
+  Analysis}}, {{Evolution}} and {{Reengineering}} ({{SANER}})}, pages 138--147,
+  {Klagenfurt, Austria}, February 2017. {IEEE}.
+
+\end{thebibliography}

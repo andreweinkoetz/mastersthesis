@@ -1,0 +1,41 @@
+\section{Use Cases}
+\label{sec:UseCases}
+
+After identifying requirements and constraints to enable an improved workflow for Web API consumers and providers, we derived use cases from their common interactions with our proposed system. Bruegge et. al define Use Cases as "general sequences of events that describe all the possible actions between an actor and the system for a given piece of functionality" \cite{bruegge_object-oriented_2010}.
+
+For a better illustration we provide a use case diagram for both actors. Figure \ref{fig:useCaseConsumer} shows the typical use cases of our system from a Web API consumer's perspective.
+
+\begin{figure}[h]
+	\centering{
+		\includegraphics[width=155mm]{images/usecase_consumer.pdf}
+		\caption{Use cases of Web API consumers}
+		\label{fig:useCaseConsumer}
+	}
+\end{figure}
+
+The migration tool is modeled as a subsystem of the client application due to its integration into the application's CI/CD pipeline. Integrating the tool requires Web API consumers to specify the target programming language for the generated library code. Furthermore, a migration strategy can be configured to meet the specific needs of the client project. Although both activities are part of the integration use case, they are modeled explicitly for client projects that do not use a CI / CD pipeline. 
+
+Updating source code after a Web API dependency changed is the most important use case for Web API consumers. In addition to generating library code from a Web API's IDL document, our system migrates all changes as stated in its migration guide. This migration guide is created and published by Web API providers. The corresponding use case (\texttt{UC11}) is shown in figure \ref{fig:useCaseProvider}. 
+
+The CI/CD system is modeled as a separate actor to illustrate the use cases that do not require manual interaction by client developers. Its primary task is to create a release of a new version of the client application without breaking changes that were introduced in the Web API. Therefore, it automatically migrates all of these changes by using our system.
+
+For further explanation, the two most important use cases for Web API consumers are described in detail below.
+
+\input{content/3_RequirementsElicitation/2_UseCases/2_IntegrateTool}
+\input{content/3_RequirementsElicitation/2_UseCases/1_FixClientApplication}
+
+Web API providers are the second group of actors that participate in our proposed workflow. Figure \ref{fig:useCaseProvider} shows the typical use cases of our system from their perspective.
+
+\begin{figure}[h]
+	\centering{
+		\includegraphics[width=150mm]{images/usecase_provider.pdf}
+		\caption{Use cases of Web API providers}
+		\label{fig:useCaseProvider}
+	}
+\end{figure}
+
+Web API Providers need to decide whether to introduce breaking changes to the publicly available interface or behavior. When breaking changes cannot be avoided, providers must create a machine-readable migration guide that specifies them. Furthermore, they need to provide an updated IDL document describing the current state of the Web API. Since our proposed workflow is only slightly different from their current workflow, a detailed description of a provider's use case focuses on providing a migration guide and an IDL document.
+
+\input{content/3_RequirementsElicitation/2_UseCases/3_ReleaseNewWebAPI}
+
+Currently, Web API providers have to manually create a migration guide. We propose that future research should explore automating this task to reduce the effort for providers. Existing tools for automatic generation of IDL documents can serve as a reference here.
