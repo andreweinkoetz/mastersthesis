@@ -1,7 +1,18 @@
 \section{Implementation}
 \label{sec:Implementation}
 
-For evaluating the proposed system, we created \textit{Pallidor} a prototypical implementation using the Swift programming language. It is composed of multiple subsystems that are developed and maintained as standalone Swift packages. In addition to our own implementations, third-party components are integrated using the Swift Package Manager. All packages are published under an open-source license. Their source code is publicly available in their respective repositories on Github. Pallidor is composed of three Swift packages that are combined in an executable that provides a commandline user interface. The \textit{PallidorGenerator} package implements the subsystems \texttt{IDL Importer} and \texttt{IDL Conversion}. The \textit{PallidorMigrator} package integrates the functionality of the \texttt{Migration Manager}, \texttt{Migration Guide Importer} and \texttt{SourceCode Importer} subsystems. The \textit{Pallidor} package contains the commandline user interface and the \texttt{Persisting Manager} subsystem. For the individual components, we identified several open-source Swift packages that provide the required functionality.
+For evaluating the proposed system, we created \textit{Pallidor} a prototypical implementation using the Swift programming language. It is composed of multiple subsystems that are developed and maintained as standalone Swift packages. Each package provides the functionality of a subsystem that is defined in Section \ref{ch:SystemDesign}. \texttt{PallidorGenerator} implements the \texttt{IDL Conversion} and \texttt{IDL Importer} subsystems. Migrating a previously generated facade is performed by the \texttt{Pal\-lidor\-Migrator} package that provides the services of the \texttt{Migration Ma\-na\-ger}, \texttt{Migration Guide Importer} and \texttt{SourceCode Importer} subsystems. 
+
+\begin{figure}[!h]
+	\centering{
+		\includegraphics[width=140mm]{images/subsystem_implementation.pdf}
+		\caption{Implementation of subsystems with Pallidor Swift packages}
+		\label{fig:subsystemImplementation}
+	}
+\end{figure}
+Both packages implement the functionality of the \texttt{Code Generation} subsystem and persist their respective results in files. The \texttt{Code Generation} subsystem is not separately implemented because our prototype only supports the Swift programming language. The \texttt{Pallidor} package combines both subpackages in an executable that provides a commandline user interface. Furthermore, it formats the source code and persists it afterwards. Figure \ref{fig:subsystemImplementation} illustrates which package implements the respective subsystem.  
+
+In addition to our own implementations, third-party open source components that provide the required functionality are integrated using the Swift Package Manager. Key components and their respective implemented subsystems are listed in Table \ref{tbl:PallidorDep}. Since Pallidor is a prototype, its functionality is limited to generating a persistent Swift package from an OpenAPI specification. It can be integrated in client applications using Swift in version 5.2 or later. Since our generated Swift package uses Apple's \texttt{Combine}\footnote{https://developer.apple.com/documentation/combine} framework, the client application's execution environment must be at least iOS 13 or MacOS 10.15. 
 
 \renewcommand{\arraystretch}{1.4}
 \begin{table*}[ht]
@@ -18,9 +29,9 @@ For evaluating the proposed system, we created \textit{Pallidor} a prototypical 
 		 \begin{center}
 			\textbf{Swift Package Author / Publisher}
 		\end{center} \\ \hline
-			\textit{IDL Importer} & OpenAPIKit & 2.0.0 \newline (Sep. 28th, 2020) &
+			\textit{IDL Importer} & OpenAPIKit & 2.1.0 \newline (Nov. 3rd, 2020) &
 			Mathew Polzin \\ \hline
-			\textit{Source Code Importer} & Sourcery & 1.0.0 \newline (Aug. 14th, 2020) &
+			\textit{Source Code Importer} & Sourcery & 1.0.2 \newline (Nov. 30th, 2020) &
 			Krzysztof Zabłocki \\ \hline
 			\textit{Code Formatter} & swift-format & 0.50300.0 \newline (Sep. 19th, 2020) &
 			Apple, Inc. \\ \hline
@@ -29,11 +40,14 @@ For evaluating the proposed system, we created \textit{Pallidor} a prototypical 
 	\end{center}
 \end{table*}
 
-Since Pallidor is a prototype, its functionality is limited to generating a persistent Swift package from an OpenAPI specification. It can be integrated in client applications using Swift in version 5.2 or later. Since our generated Swift package uses Apple's \texttt{Combine}\footnote{https://developer.apple.com/documentation/combine} framework, the client application's execution environment must be at least iOS 13 or MacOS 10.15. 
+The \texttt{OpenAPIKit} is a library that enables encoding to- and decoding Swift types from OpenAPI documents. It supports importing documents structured in JSON and YAML formats and provides Swift types for most types of the OpenAPI specification in (3.0.2). In its latest version, the \texttt{OpenAPIKit} does not support \texttt{Link Objects} and specification extensions for \texttt{OpenAPI.XML} and \texttt{OpenAPI.Oauth\-Flows}. As opposed to the OpenAPI specification, this library specifies the \texttt{re\-qui\-red} property of schema elements on the element instead of the parent object. OpenAPI documents must be provided as \texttt{Data} or \texttt{String} types, as the \texttt{OpenAPIKit} does not support reading files. Furthermore, all reference elements (\texttt{\$ref}) must be internal references and target the same file in order to be resolved.
 
-\begin{itemize}
-	\item OAI spec can not nest schemas
-	\item other restrictions to specs (must define success return value), needs consistency with actual API (not string error defined but json msg returned)
-	\item OAIGenerator drawbacks and why we cant use it?
-\end{itemize}
+\texttt{Sourcery} is a code generator for Swift, built on top of Apple's \texttt{SourceKit}. It extends its functionality and types to facilitate generating Swift code based on Stencil templates. Although \texttt{Sourcery} is designed as a commandline tool to be integrated in a custom build phase, it provides a framework that can be incorporated using the Swift Package Manager. In addition to generating Swift code, it provides support for parsing Swift strings in corresponding source code entities. 
+
+Formatting the generated Swift code is performed by \texttt{swift-format}. It can be used as a commandline tool or integrated into applications using the Swift Package Manager. It provides an API to format Swift code according to a style configuration. If no set of styling rules is specified, a default style is used. The package is compatible with Swift 5.1 and higher and requires selecting the appropriate branch that corresponds to the version of Swift used in the integrating application.
+
+\input{content/7_CaseStudyEvaluation/1_Implementation/1_PallidorGenerator}
+\input{content/7_CaseStudyEvaluation/1_Implementation/2_PallidorMigrator}
+\input{content/7_CaseStudyEvaluation/1_Implementation/3_Pallidor}
+
 

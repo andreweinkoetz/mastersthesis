@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.5.3)  30 NOV 2020 10:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.5.3)  16 DEC 2020 15:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -908,7 +908,7 @@ File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
 (/usr/local/texlive/2020/texmf-dist/tex/latex/listings/listings.cfg
 File: listings.cfg 2020/03/24 1.8d listings configuration
 ))
-Package scrhack Info: loading listings hack on input line 125.
+Package scrhack Info: loading listings hack on input line 127.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/koma-script/listings.hak
 File: listings.hak 2020/01/24 v3.29 KOMA-Script scrhack part (hacking package l
@@ -998,7 +998,7 @@ Class scrbook Warning: Usage of package `fancyhdr' together
 (scrbook)              `\addtokomafont' for the page style elements need
 (scrbook)              explicite user intervention to work.
 (scrbook)              Nevertheless, using requested
-(scrbook)              package `fancyhdr' on input line 191.
+(scrbook)              package `fancyhdr' on input line 214.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 Package: fancyhdr 2019/01/31 v3.10 Extensive control of page headers and footer
@@ -1015,7 +1015,7 @@ s
 )
 Package scrhack Info: hyperref hack deactivated because of
 (scrhack)             detection of KOMA-Script class, that doesn't
-(scrhack)             need that hack, on input line 226.
+(scrhack)             need that hack, on input line 249.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2020/01/14 v7.00d Hypertext links for LaTeX
@@ -1121,8 +1121,8 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip91
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 235.
-Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 235.
+Package hyperref Info: Option `colorlinks' set `true' on input line 258.
+Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 258.
 
  (/usr/local/texlive/2020/texmf-dist/tex/latex/enumitem/enumitem.sty
 Package: enumitem 2019/06/20 v3.9 Customized lists
@@ -1388,12 +1388,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 4--6
 
  (./frontmatter/abstract.tex
 chapter without number
-LaTeX Font Info:    Trying to load font information for TS1+ppl on input line 9
-.
-(/usr/local/texlive/2020/texmf-dist/tex/latex/psnfss/ts1ppl.fd
-File: ts1ppl.fd 2001/06/04 font definitions for TS1/ppl.
-))pdfTeX warning (ext4): destination with the same identifier (name{page.i}) ha
-s been already used, duplicate ignored
+)
+Overfull \hbox (3.83638pt too wide) in paragraph at lines 3--57
+\T1/ppl/m/n/12 Modern web-based APIs of-fer a broad va-ri-ety of ser-vices for 
+nu-mer-ous dis-tributed
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.i}) has 
+been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.57 \include{frontmatter/abstract}
@@ -1432,14 +1434,11 @@ l.60 \tableofcontents
 
 
 
-] (./thesis.toc
-Underfull \vbox (badness 1062) has occurred while \output is active []
-
-pdfTeX warning (ext4): destination with the same identifier (name{page.v}) has 
-been already used, duplicate ignored
+] (./thesis.tocpdfTeX warning (ext4): destination with the same identifier (nam
+e{page.v}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.49 ...e {7.1.2}Open Goals}{51}{subsection.7.1.2}
+l.49 ...er}{\numberline {7}Summary}{59}{chapter.7}
                                                   % [5])
 \tf@toc=\write5
 \openout5 = `thesis.toc'.
@@ -1511,7 +1510,7 @@ rgest [][] di-rec-to-ries, [][]
 
 
 ] (./content/1_Introduction/1_Motivation.tex [2]
-<images/old_workflow.pdf, id=298, 442.65375pt x 412.54124pt>
+<images/old_workflow.pdf, id=304, 442.65375pt x 412.54124pt>
 File: images/old_workflow.pdf Graphic file (type pdf)
 <use images/old_workflow.pdf>
 Package pdftex.def Info: images/old_workflow.pdf  used on input line 12.
@@ -1521,7 +1520,7 @@ Package pdftex.def Info: images/old_workflow.pdf  used on input line 12.
 Package acronym Info: Label `acro:CI/CD' newly defined as it shall be overridde
 n
 although it is yet undefined on input line 4.
-<images/new_workflow.pdf, id=345, 496.85625pt x 400.49625pt>
+<images/new_workflow.pdf, id=351, 496.85625pt x 400.49625pt>
 File: images/new_workflow.pdf Graphic file (type pdf)
 <use images/new_workflow.pdf>
 Package pdftex.def Info: images/new_workflow.pdf  used on input line 8.
@@ -1575,13 +1574,13 @@ sys-tem au-to-mat-i-cally re-solves
  []
 
 [12]
-<images/cd_migration_guide.pdf, id=470, 584.48361pt x 304.58954pt>
+<images/cd_migration_guide.pdf, id=476, 584.48361pt x 304.58954pt>
 File: images/cd_migration_guide.pdf Graphic file (type pdf)
 <use images/cd_migration_guide.pdf>
 Package pdftex.def Info: images/cd_migration_guide.pdf  used on input line 35.
 (pdftex.def)             Requested size: 384.1122pt x 200.17455pt.
  [13 <./images/cd_migration_guide.pdf>]
-<images/output_subsystem.pdf, id=489, 555.07375pt x 772.8875pt>
+<images/output_subsystem.pdf, id=495, 555.07375pt x 772.8875pt>
 File: images/output_subsystem.pdf Graphic file (type pdf)
 <use images/output_subsystem.pdf>
 Package pdftex.def Info: images/output_subsystem.pdf  used on input line 45.
@@ -1610,7 +1609,7 @@ Overfull \hbox (1.7044pt too wide) in paragraph at lines 84--85
  []
 
 ) (./content/3_RequirementsElicitation/2_UseCases.tex
-<images/usecase_consumer.pdf, id=528, 1013.7875pt x 689.57625pt>
+<images/usecase_consumer.pdf, id=534, 1013.7875pt x 689.57625pt>
 File: images/usecase_consumer.pdf Graphic file (type pdf)
 <use images/usecase_consumer.pdf>
 Package pdftex.def Info: images/usecase_consumer.pdf  used on input line 10.
@@ -1626,7 +1625,12 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 [16] (./content/3_RequirementsElicitation/2_UseCases/2_IntegrateTool.tex
 Package acronym Info: Label `acro:CLI' newly defined as it shall be overridden
 although it is yet undefined on input line 23.
+LaTeX Font Info:    Trying to load font information for TS1+ppl on input line 3
+3.
 
+(/usr/local/texlive/2020/texmf-dist/tex/latex/psnfss/ts1ppl.fd
+File: ts1ppl.fd 2001/06/04 font definitions for TS1/ppl.
+)
 Underfull \hbox (badness 3354) in paragraph at lines 34--36
 []\T1/ppl/m/n/12 Success: Out-put com-piles and re-quest-s/re-sponses
  []
@@ -1646,7 +1650,7 @@ Underfull \vbox (badness 10000) detected at line 45
  []
 
 [18])
-<images/usecase_provider.pdf, id=611, 794.3005pt x 340.27126pt>
+<images/usecase_provider.pdf, id=617, 794.3005pt x 340.27126pt>
 File: images/usecase_provider.pdf Graphic file (type pdf)
 <use images/usecase_provider.pdf>
 Package pdftex.def Info: images/usecase_provider.pdf  used on input line 31.
@@ -1682,7 +1686,7 @@ Overfull \hbox (1.81976pt too wide) in paragraph at lines 4--5
 
 [25] (./content/5_SystemDesign/1_DesignGoals.tex [26]) [27]
 (./content/5_SystemDesign/2_SubsystemDecomposition.tex
-<images/subsystem_decomposition.pdf, id=713, 1034.86626pt x 1063.975pt>
+<images/subsystem_decomposition.pdf, id=719, 1034.86626pt x 1063.975pt>
 File: images/subsystem_decomposition.pdf Graphic file (type pdf)
 <use images/subsystem_decomposition.pdf>
 Package pdftex.def Info: images/subsystem_decomposition.pdf  used on input line
@@ -1696,7 +1700,7 @@ Overfull \hbox (14.22636pt too wide) in paragraph at lines 8--9
 [28 <./images/subsystem_decomposition.pdf>])
 (./content/5_SystemDesign/3_BoundaryConditions.tex [29])
 (./content/5_SystemDesign/4_HardwareSoftwareMapping.tex
-<images/subsystem_concrete.pdf, id=745, 1006.76125pt x 1372.12625pt>
+<images/subsystem_concrete.pdf, id=751, 1006.76125pt x 1372.12625pt>
 File: images/subsystem_concrete.pdf Graphic file (type pdf)
 <use images/subsystem_concrete.pdf>
 Package pdftex.def Info: images/subsystem_concrete.pdf  used on input line 8.
@@ -1757,12 +1761,12 @@ Overfull \hbox (6.0pt too wide) in paragraph at lines 37--37
  []
 
 [36]) (./content/6_ObjectDesign/2_InterfaceSpecification.tex
-<images/cd_idl_import.pdf, id=878, 496.53001pt x 171.68642pt>
+<images/cd_idl_import.pdf, id=884, 496.53001pt x 171.68642pt>
 File: images/cd_idl_import.pdf Graphic file (type pdf)
 <use images/cd_idl_import.pdf>
 Package pdftex.def Info: images/cd_idl_import.pdf  used on input line 8.
 (pdftex.def)             Requested size: 426.79134pt x 147.5793pt.
-<images/cd_sourceentity.pdf, id=881, 491.712pt x 230.20505pt>
+<images/cd_sourceentity.pdf, id=887, 491.712pt x 230.20505pt>
 File: images/cd_sourceentity.pdf Graphic file (type pdf)
 <use images/cd_sourceentity.pdf>
 Package pdftex.def Info: images/cd_sourceentity.pdf  used on input line 18.
@@ -1774,12 +1778,12 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 Package acronym Info: Label `acro:UID' newly defined as it shall be overridden
 although it is yet undefined on input line 24.
 [37 <./images/cd_idl_import.pdf>]
-<images/cd_code_import.pdf, id=980, 533.59348pt x 171.32005pt>
+<images/cd_code_import.pdf, id=986, 533.59348pt x 171.32005pt>
 File: images/cd_code_import.pdf Graphic file (type pdf)
 <use images/cd_code_import.pdf>
 Package pdftex.def Info: images/cd_code_import.pdf  used on input line 28.
 (pdftex.def)             Requested size: 426.79134pt x 137.03531pt.
-<images/cd_migguide.pdf, id=982, 453.05258pt x 451.30104pt>
+<images/cd_migguide.pdf, id=988, 453.05258pt x 451.30104pt>
 File: images/cd_migguide.pdf Graphic file (type pdf)
 <use images/cd_migguide.pdf>
 Package pdftex.def Info: images/cd_migguide.pdf  used on input line 38.
@@ -1808,13 +1812,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 48--48
 ws/internet-explorer/ie-
  []
 
-<images/cd_migration.pdf, id=1555, 488.06342pt x 187.0488pt>
+<images/cd_migration.pdf, id=1561, 488.06342pt x 187.05083pt>
 File: images/cd_migration.pdf Graphic file (type pdf)
 <use images/cd_migration.pdf>
 Package pdftex.def Info: images/cd_migration.pdf  used on input line 54.
-(pdftex.def)             Requested size: 426.79134pt x 163.57596pt.
+(pdftex.def)             Requested size: 426.79134pt x 163.57771pt.
 [40 <./images/cd_migration.pdf>]
-<images/cd_generation.pdf, id=1840, 519.96254pt x 239.12335pt>
+<images/cd_generation.pdf, id=1758, 519.96254pt x 239.12335pt>
 File: images/cd_generation.pdf Graphic file (type pdf)
 <use images/cd_generation.pdf>
 Package pdftex.def Info: images/cd_generation.pdf  used on input line 64.
@@ -1830,13 +1834,7 @@ Overfull \hbox (5.12018pt too wide) in paragraph at lines 70--71
 pro-gram-ming lan-guages
  []
 
-
-Overfull \hbox (5.63857pt too wide) in paragraph at lines 70--71
-\T1/ppl/m/n/12 to the \T1/pcr/m/n/12 SourceCode Importer \T1/ppl/m/n/12 sub-sys
--tem, it takes wrapped \T1/pcr/m/n/12 SourceCodeEntity
- []
-
-<images/cd_persisting.pdf, id=1841, 442.89467pt x 502.48929pt>
+<images/cd_persisting.pdf, id=1759, 442.89467pt x 502.48929pt>
 File: images/cd_persisting.pdf Graphic file (type pdf)
 <use images/cd_persisting.pdf>
 Package pdftex.def Info: images/cd_persisting.pdf  used on input line 74.
@@ -1850,13 +1848,25 @@ Overfull \hbox (14.22636pt too wide) in paragraph at lines 74--75
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 ) (./content/6_ObjectDesign/3_Restructuring.tex
-Overfull \hbox (2.55463pt too wide) in paragraph at lines 80--1
-\T1/pcr/m/n/12 LibraryBuilder \T1/ppl/m/n/12 and \T1/pcr/m/n/12 FacadeBuilder \
-T1/ppl/m/n/12 ob-jects are in-stan-ti-ated and their \T1/pcr/m/n/12 build
+Overfull \hbox (11.09865pt too wide) in paragraph at lines 80--1
+\T1/pcr/m/n/12 Generation \T1/ppl/m/n/12 and \T1/pcr/m/n/12 Code Formatting \T1
+/ppl/m/n/12 sub-sys-tems. Ad-di-tion-ally, the \T1/pcr/m/n/12 Persisting
+ []
+
+
+Overfull \hbox (15.28625pt too wide) in paragraph at lines 80--1
+\T1/ppl/m/n/12 ing and gen-er-at-ing pro-cess. There-fore, the \T1/pcr/m/n/12 L
+ibraryBuilder \T1/ppl/m/n/12 and \T1/pcr/m/n/12 FacadeBuilder
+ []
+
+
+Overfull \hbox (13.44875pt too wide) in paragraph at lines 80--1
+\T1/ppl/m/n/12 tively. Once it re-ceives the gen-er-ated source code strings, t
+he \T1/pcr/m/n/12 PersistingManager
  []
 
 [41 <./images/cd_generation.pdf>] [42 <./images/cd_persisting.pdf>]
-<images/subsystem_restructured.pdf, id=2721, 1025.8325pt x 1055.945pt>
+<images/subsystem_restructured.pdf, id=2639, 1025.8325pt x 1055.945pt>
 File: images/subsystem_restructured.pdf Graphic file (type pdf)
 <use images/subsystem_restructured.pdf>
 Package pdftex.def Info: images/subsystem_restructured.pdf  used on input line 
@@ -1876,8 +1886,11 @@ ager \T1/ppl/m/n/12 and
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-) (./content/6_ObjectDesign/5_Testing.tex [43]
-Underfull \vbox (badness 1033) has occurred while \output is active []
+) (./content/6_ObjectDesign/5_Testing.tex
+Underfull \vbox (badness 1248) has occurred while \output is active []
+
+ [43]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [44 <./images/subsystem_restructured.pdf>]
 Overfull \hbox (9.1472pt too wide) in paragraph at lines 13--30
@@ -1894,35 +1907,91 @@ Overfull \hbox (9.1472pt too wide) in paragraph at lines 66--83
  [] 
  []
 
-)) [47]
+)) [47] [48]
 \openout2 = `content/7_CaseStudyEvaluation.aux'.
 
- (./content/7_CaseStudyEvaluation.tex [48
-
-
-
-
-]
+ (./content/7_CaseStudyEvaluation.tex
 chapter 6.
-[49] (./content/7_CaseStudyEvaluation/1_Implementation.tex
-Overfull \hbox (5.69643pt too wide) in paragraph at lines 4--5
-\T1/ppl/m/it/12 Pal-li-dorMi-gra-tor \T1/ppl/m/n/12 pack-age in-te-grates the f
-unc-tion-al-ity of the \T1/pcr/m/n/12 Migration Manager\T1/ppl/m/n/12 ,
+[49
+
+
+
+
+] (./content/7_CaseStudyEvaluation/1_Implementation.tex
+Overfull \hbox (1.13986pt too wide) in paragraph at lines 4--5
+\T1/pcr/m/n/12 ger\T1/ppl/m/n/12 , \T1/pcr/m/n/12 Migration Guide Importer \T1/
+ppl/m/n/12 and \T1/pcr/m/n/12 SourceCode Importer \T1/ppl/m/n/12 sub-sys-tems. 
+
  []
 
-) (./content/7_CaseStudyEvaluation/2_Evaluation.tex)) [50]
+<images/subsystem_implementation.pdf, id=2706, 1061.9675pt x 1132.23pt>
+File: images/subsystem_implementation.pdf Graphic file (type pdf)
+<use images/subsystem_implementation.pdf>
+Package pdftex.def Info: images/subsystem_implementation.pdf  used on input lin
+e 8.
+(pdftex.def)             Requested size: 398.33858pt x 424.68886pt.
+[50 <./images/subsystem_implementation.pdf>] [51]
+(./content/7_CaseStudyEvaluation/1_Implementation/1_PallidorGenerator.tex
+Overfull \hbox (6.0pt too wide) in paragraph at lines 21--21
+[][][][][][][] 
+ []
+
+[52]
+Overfull \hbox (6.0pt too wide) in paragraph at lines 45--45
+[][][][][][][] 
+ []
+
+[53]
+Overfull \hbox (6.0pt too wide) in paragraph at lines 56--56
+[][][][][][][] 
+ []
+
+) (./content/7_CaseStudyEvaluation/1_Implementation/2_PallidorMigrator.tex
+Overfull \hbox (1.86865pt too wide) in paragraph at lines 3--4
+\T1/ppl/m/n/12 ing on the type of change that is stated in the mi-gra-tion guid
+e, the \T1/pcr/m/n/12 MigrationSet
+ []
+
+[54]
+Overfull \hbox (6.0pt too wide) in paragraph at lines 18--18
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 44--44
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (4.15002pt too wide) in paragraph at lines 46--47
+\T1/pcr/m/n/12 WrappedMethod\T1/ppl/m/n/12 . Sim-i-lar to the source code en-ti
+-ties of the \T1/pcr/m/n/12 PallidorGenerator
+ []
+
+[55]
+Overfull \hbox (6.0pt too wide) in paragraph at lines 57--57
+[][][][][][][] 
+ []
+
+) (./content/7_CaseStudyEvaluation/1_Implementation/3_Pallidor.tex [56]
+[57]
+Overfull \hbox (6.0pt too wide) in paragraph at lines 37--37
+[][][][][][][] 
+ []
+
+)) (./content/7_CaseStudyEvaluation/2_Evaluation.tex)) [58]
 \openout2 = `content/8_Summary.aux'.
 
 
 (./content/8_Summary.tex
 chapter 7.
 (./content/8_Summary/1_Conclusion.tex) (./content/8_Summary/2_FutureWork.tex))
-[51
+[59
 
 
 
 
-] [52
+] [60
 
 
 
@@ -1936,36 +2005,36 @@ nager \T1/ppl/m/n/12 and \T1/pcr/m/n/12 Library
 \tf@lof=\write6
 \openout6 = `thesis.lof'.
 
- [53
+ [61
 
 
-] [54
+] [62
 
 
 ] (./thesis.lot)
 \tf@lot=\write7
 \openout7 = `thesis.lot'.
 
- [55] [56
+ [63] [64
 
 
 ] (./thesis.lol)
 \tf@lol=\write8
 \openout8 = `thesis.lol'.
 
- (./thesis.bbl [57] [58
+ (./thesis.bbl [65] [66
 
 
 ]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [59])
-[60]
+ [67])
+[68]
 \openout2 = `appendix/appendixExample.aux'.
 
  (./appendix/appendixExample.tex
 chapter without number
-) [61
+) [69
 
 
 
@@ -1990,13 +2059,13 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 38361 strings out of 480608
- 863162 string characters out of 5903631
- 1515765 words of memory out of 5000000
- 53019 multiletter control sequences out of 15000+600000
+ 39671 strings out of 480608
+ 881267 string characters out of 5903631
+ 1554812 words of memory out of 5000000
+ 54196 multiletter control sequences out of 15000+600000
  577875 words of font info for 95 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 67i,12n,105p,10124b,2008s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 67i,12n,105p,10124b,2802s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texl
 ive/2020/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2020
@@ -2005,10 +2074,10 @@ dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2020/texmf-dist/fo
 nts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/typ
 e1/urw/palatino/uplr8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/urw/
 palatino/uplri8a.pfb>
-Output written on thesis.pdf (75 pages, 2367715 bytes).
+Output written on thesis.pdf (83 pages, 2447224 bytes).
 PDF statistics:
- 3072 PDF objects out of 3580 (max. 8388607)
- 2288 compressed objects within 23 object streams
- 294 named destinations out of 1000 (max. 500000)
- 394 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 3203 PDF objects out of 3580 (max. 8388607)
+ 2433 compressed objects within 25 object streams
+ 416 named destinations out of 1000 (max. 500000)
+ 423 words of extra memory for PDF output out of 10000 (max. 10000000)
 

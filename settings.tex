@@ -121,6 +121,8 @@
 % code listings
 %%%%%%%%%%%%%%%%%%%
 
+\newcommand{\srcsize}{\@setfontsize{\srcsize}{5pt}{5pt}}
+
 \usepackage{listings}
 \lstloadlanguages{TeX, C++, XML, Matlab, Java, Python, C, Swift} % add languages if needed 
 \lstset{%
@@ -133,13 +135,34 @@
 	breakautoindent=true,    % indent lines after line breaks
 	postbreak=\space,        % line break at spaces
 	tabsize=2,               % size of tab indentation
-	basicstyle=\small\ttfamily,
+	basicstyle={\ttfamily\small},
 	showspaces=false,        % don't show spaces
 	columns=fullflexible,
 	showstringspaces=false,  % ...also not in 'strings' / "strings"
 	extendedchars=true,      % show all Latin1 chars
 	backgroundcolor=\color{ListingBackground} % background color of the listing
 }
+
+\lstdefinelanguage{swift}
+{
+	morekeywords={
+		func,if,then,else,for,in,while,do,switch,case,default,where,break,continue,fallthrough,return,
+		typealias,struct,class,enum,protocol,var,func,let,get,set,willSet,didSet,inout,init,deinit,extension,
+		subscript,prefix,operator,infix,postfix,precedence,associativity,left,right,none,convenience,dynamic,
+		final,lazy,mutating,nonmutating,optional,override,required,static,unowned,safe,weak,internal,
+		private,public,is,as,self,unsafe,dynamicType,true,false,nil,Type,Protocol,
+	},
+	morecomment=[l]{//}, % l is for line comment
+	morecomment=[s]{\\(}{)}, % s is for start and end delimiter
+	morestring=[b]", % defines that strings are enclosed in double quotes
+	keywordstyle=\color{keyword},
+	stringstyle=\color{swiftstring},
+	commentstyle=\color{comment}
+}
+
+\definecolor{keyword}{HTML}{BA2CA3}
+\definecolor{swiftstring}{HTML}{D12F1B}
+\definecolor{comment}{HTML}{008400}
 
 \definecolor{delim}{RGB}{20,105,176}
 \definecolor{numb}{RGB}{106, 109, 32}

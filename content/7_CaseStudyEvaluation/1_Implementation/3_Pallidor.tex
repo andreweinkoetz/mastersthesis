@@ -1,0 +1,39 @@
+\subsection{Pallidor}\label{subsec:Pallidor}
+The \textit{Pallidor} package contains the commandline user interface and the \texttt{Code\- Formatting} component. Furthermore it stores all configuration settings of the user. By invoking \texttt{Pallidor} via its commandline interface and providing all required configuration parameters, the client library is generated. The \texttt{swift\-argument-parser}\footnote{https://github.com/apple/swift-argument-parser} package is used to supply detailed error and help messages and it facilitates type-safe argument parsing. The URLs of the OpenAPI specification and migration guide are used to initialize the \texttt{Pallidor\-Generator} and \texttt{Pallidor\-Migrator} Swift packages. Additionally, the name and location of the client library are used by the packages to both, import previously generated source code and persist their results after execution. After both packages successfully completed their tasks, the \texttt{swift-format} package is used to format the code according to the ruleset that the user provided. The formatted source code strings overwrite the previously generated Swift files.
+
+Several parameters are used to configure \texttt{Pallidor}. While the URLs of the migration guide, OpenAPI specification and location of the package as well as its name are mandatory parameters, specifying a ruleset for formatting the source code strings is optional. \texttt{Pallidor} is limited to emitting the client library as a Swift package, hence selecting a programming language currently defaults to Swift. A migration strategy can be set to exclude certain types of migration. This configuration parameter defaults to the implemented strategy of migrating all types. The \texttt{help} argument is provided by the \texttt{swift-argument-parser} and lists all available parameters of \texttt{Pallidor}. It also supports the user with helpful error messages that highlight the correct usage.
+
+\begin{lstlisting}[language=Tex, caption={Commandline arguments of Pallidor to support user}, captionpos=b, label={lst:arguments}]
+	Error: Missing expected argument 
+				'--target-directory <target-directory>'
+	
+	USAGE: pallidor 
+	--openapi-specification-url <openapi-specification-url> 
+	--migration-guide-url <migration-guide-url>
+	--target-directory <target-directory> 
+	--package-name <package-name> 
+	[--language <language>] 
+	[--strategy <strategy>]
+	[--custom-formatting-rule-path <custom-formatting-rule-path>]
+	
+	OPTIONS:
+	-c, --custom-formatting-rule-path <custom-formatting-rule-path>
+	If you want to use your own code formatting rules, specify path here 
+	-o, --openapi-specification-url <openapi-specification-url>
+	URL of OpenAPI specification of the package to be generated 
+	-m, --migration-guide-url <migration-guide-url>
+	URL of migration guide of the package to be generated 
+	-t, --target-directory <target-directory>
+	Output path of the package generated 
+	-p, --package-name <package-name>
+	Name of the package generated 
+	-l, --language <language>
+	Programming language that the client library should be generated in (default: Swift)
+	-s, --strategy <strategy>
+	Migration strategy that excludes certain types of change from being migrated (default: all)
+	-h, --help
+	Show help information.
+
+\end{lstlisting}
+
+\texttt{Pallidor} is designed as a commandline tool that can be integrated into an existing CI/CD system. Therefore, it needs to be compiled and the binaries must be deployed. The configuration parameters can be predefined in a script file that is integrated in the build phase of the CI pipeline. The script is automatically executed as a step phase and performs the migration to generate the Swift package that is integrated in the client application. The CI/CD system must be configured to publish the generated Swift package in a separate respository that is referenced from the \texttt{Package.swift} file of the client application. After that it automatically creates a new release of the client application.

@@ -23,5 +23,6 @@
 \contentsline {figure}{\numberline {5.7}{\ignorespaces Class diagram of persisting manager subsystem\relax }}{42}{figure.caption.49}%
 \contentsline {figure}{\numberline {5.8}{\ignorespaces Restructured subsystem decomposition - The \texttt {Code Generation} subsystem was extracted from the \texttt {Migration Manager} and \texttt {Library Generation} subsystems to provide a uniform interface to both subsystems\relax }}{44}{figure.caption.50}%
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Implementation of subsystems with Pallidor Swift packages\relax }}{50}{figure.caption.57}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }

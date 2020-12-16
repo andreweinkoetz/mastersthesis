@@ -1,0 +1,59 @@
+\subsection{Pallidor Generator}\label{subsec:PallidorGenerator}
+
+The \texttt{PallidorGenerator} Swift package is concerned with retrieving and parsing of OpenAPI specifications to generate the library layer of the Swift package for the client application. Therefore, OpenAPI specifications must be parsed and converted to source code entities. After that, they are transformed into source code strings in the Swift programming language and are persisted in files. The package integrates the \texttt{OpenAPIKit} which decodes an OpenAPI specification in its \texttt{Open\-API.Document} type. This type is composed of elements that represent the attributes of an OpenAPI specification. Furthermore, it provides a locally deferenced representation that facilitates the traversal of its structure by replacing all \texttt{\$ref} elements with their referenced entities. The \texttt{OpenAPI.Document} needs to be converted to source code entities before Swift code can be generated. This conversion is performed during the traversal of the document by using various \texttt{Resolver} objects. Depending on the OpenAPI specification element that needs to be converted, a corresponding \texttt{Resolver} initializes a source code entity model using the information of the OpenAPI element. Resolving an endpoint struct from the \texttt{Resolved\-Route} type of the \texttt{OpenAPIKit} is shown in Listing \ref{lst:Resolving}.
+
+\begin{lstlisting}[language=Swift, caption={Resolving an operation}, captionpos=b, label={lst:Resolving}]
+	/// Resolves an endpoint struct
+	/// - Parameters:
+	///   - path: path in OpenAPI document
+	///   - route: Resolved route from OpenAPI document
+	/// - Returns: resolved EndpointModel
+	static func resolve(path: OpenAPI.Path, route: ResolvedRoute) -> EndpointModel {
+		let endpoint = EndpointModel(
+				name: path.components[0].upperFirst(), 
+				operations: [], 
+				detail: route.summary)
+		endpoint.operations = route.endpoints.map( 
+				{ OperationModel.resolve(endpoint: $0) })
+		return endpoint
+	}
+
+\end{lstlisting}
+
+All source code entity models of the \texttt{PallidorGenerator} package are extended with the \texttt{Custom\-String\-Convertible} protocol that adds the \texttt{description} computed property. It is used to specify string templates for generating the Swift code of the library layer. They are dynamically composed of all string templates of nested models such as methods, parameters or properties. Furthermore, static templates for meta files such as the \texttt{Package.swift} file are provided as Markdown (\texttt{.md}) files. Although minor adjustments are made, for example specifying the name of the Swift package, their functionality remains the same between different Web APIs.
+
+\begin{lstlisting}[language=Swift, caption={Source code string template for an endpoint}, captionpos=b, label={lst:EndpointTempl}]
+	/// Extension of the Endpoint Model
+	/// Used for generating client library code in Swift
+	extension EndpointModel : CustomStringConvertible {
+		var description: String {
+			"""
+			import Foundation
+			import Combine
+			
+			struct _\(name.upperFirst())API {
+				static let decoder ...
+				\(operations
+				.sorted(by: {$0.operationId < $1.operationId})
+				.map({$0.description})
+				.joined())
+			}
+			"""
+		}
+	}
+
+\end{lstlisting}
+
+The public interface of the \texttt{PallidorGenerator} Swift package is provided by the file of the same name. Its initialization requires specifying the URL of the OpenAPI specification to be decoded. Depending on its format, a \texttt{JSON\-Decoder} or \texttt{YAML\-Decoder} is created that is used to decode the OpenAPI specification. Initializating the \texttt{Pal\-li\-dor\-Gen\-er\-ator} fails, if the OpenAPI document cannot be decoded or resolved due to an invalid URL or malformed structure. Generating the Swift code of the library layer and persisting it in files is performed by invoking its \texttt{generate} method. It receives a \texttt{path} parameter and the name of the client library as specified by the user. After generating all files, a list of their URLs is returned to the method's caller. The method throws an error if writing the files in the target directory fails. Several OpenAPI specifications of various Web APIs are used for testing the \texttt{PallidorGenerator} Swift package. They are specified in Markdown files and are located in the \texttt{Resources} subfolder of the test folder. The generated files are validated against predefined results specified in Markdown files that are located in the \texttt{Results} subfolder. 
+
+Integrating the \texttt{PallidorGenerator} package in a Swift project, the URL of its Github repository must be added to the dependencies in the \texttt{Package.swift} file. Furthermore, the \texttt{develop} branch must be selected for using its latest version.
+
+\begin{lstlisting}[language=Swift, caption={Integrating PallidorGenerator in SPM}, captionpos=b, label={lst:IntegrationGenerator}]
+	.package(
+			url: "https://github.com/Apodini/PallidorGenerator.git", 
+			.branch("develop")
+	)
+\end{lstlisting}
+
+
+With regard to the implementation of the \texttt{PallidorGenerator} Swift package, some restrictions must be observed. Instead of defining inline objects in nested elements of an OpenAPI specification, schema components must be used to specify custom data types. They must be referenced at their designated target element. This limitation is based on the problem that nested elements do not provide an identification, which is required for building the library layer. The OpenAPI specification supports defining primitive data types as schema components using a custom name. These type aliases are resolved and their underlying primitive types are used in the generated client library. Furthermore, all endpoint methods in an OpenAPI specification must specify the \texttt{operationId} property. Analogous to schema components, this identifier is used by \texttt{Pallidor} to recognize changes and to generate the client library. Although it is not enforced by the OpenAPI specification, all operations must specify at least one response that is returned after the request was processed successfully. Otherwise the return value type of an operation cannot be inferred from the OpenAPI document. Unlike successful responses, error responses can be of various types.
