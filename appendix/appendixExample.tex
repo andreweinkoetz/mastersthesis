@@ -1,1 +1,35 @@
-\chapter{Appendix Example}
+\chapter{Appendix}
+\begin{landscape}
+	\thispagestyle{empty}
+\begin{table}[]
+	\begin{small}
+	\begin{center}
+	\begin{tabular}{@{}lp{0.12\textwidth}p{0.12\textwidth}p{0.12\textwidth}p{0.12\textwidth}p{0.12\textwidth}p{0.12\textwidth}p{0.12\textwidth}p{0.12\textwidth}p{0.16\textwidth}@{}}
+		\toprule
+		\multicolumn{1}{c}{\multirow{2}{0.1\textwidth}{\textbf{Rename} \textbf{Target}}} & \multicolumn{4}{c}{\textbf{Method}}                                 & \multicolumn{4}{c}{\textbf{Parameter}}                              & \multicolumn{1}{c}{\textbf{Return Value}}                           \\ \cmidrule(l){2-10} 
+		\multicolumn{1}{c}{}                                         & \textit{Add} & \textit{Rename} & \textit{Replace} & \textit{Remove} & \textit{Add} & \textit{Rename} & \textit{Replace} & \textit{Remove} & \textit{Replace} \\ \cmidrule(r){1-1}
+		Endpoint                                                     &    test\-Renamed\-And\-Add\-Method          &    test\-Renamed\-Endpoint\-And\-Renamed\-Method             &     test\-Renamed\-Endpoint\-And\-Replace\-Method             &    test\-Renamed\-Endpoint\-And\-Deleted\-Method             &   test\-Renamed\-Endpoint\-And\-Rename\-Method\-And\-Add\-And\-Delete\-Parameter\-Change           &       test\-Renamed\-Endpoint\-And\-Rename\-Method\-And\-Changed\-Parameters\-And\-Replace\-Return\-Value\-Change          &         test\-Renamed\-Endpoint\-And\-Rename\-Method\-And\-Replace\-And\-Delete\-Parameter\-Change          &      test\-Renamed\-Endpoint\-And\-Rename\-Method\-And\-Add\-And\-Delete\-Parameter\-Change           &        test\-Renamed\-Endpoint\-And\-Rename\-Method\-And\-Replace\-And\-Delete\-Parameter\-And\-Replace\-Return\-Value\-Change          \\
+		Method                                                       &   \multicolumn{1}{c}{-}           &   \multicolumn{1}{c}{-}              &    \multicolumn{1}{c}{-}             &    \multicolumn{1}{c}{-}             &      test\-Rename\-Method\-And\-Added\-Parameter        &     test\-Rename\-Method\-And\-Rename\-Parameter              &      test\-Rename\-Method\-And\-Replace\-Parameter              &     test\-Rename\-Method\-And\-Remove\-Parameter              &     test\-Renamed\-Method\-And\-Replaced\-Return\-Value                     \\ \bottomrule
+	\end{tabular}
+	\caption{Tests for all permutation types for renaming endpoints and methods}
+	\label{tab:PermutationAPITests}
+\end{center}
+	\end{small}
+\end{table}
+\end{landscape}
+\newpage
+\begin{landscape}
+		\thispagestyle{empty}
+\begin{table}[ht]
+	\begin{center}
+	\begin{tabular}{@{}lp{0.3\textwidth}p{0.3\textwidth}p{0.3\textwidth}p{0.3\textwidth}@{}}
+		\toprule
+		\multicolumn{1}{c}{\multirow{2}{0.1\textwidth}{\textbf{Renamed Target}}} & \multicolumn{4}{c}{\textbf{Attribute}}                              \\ \cmidrule(l){2-5} 
+		\multicolumn{1}{c}{}                                         & \textit{Add} & \textit{Rename} & \textit{Replace} & \textit{Remove} \\ \cmidrule(r){1-1}
+		Model                                                        &  testRenamed\-ModelAnd\-AddProperty            &       testRenamed\-ModelAnd\-RenamedProperty          &       testRenamed\-ModelAnd\-ReplacedProperty           &      testRenamed\-ModelAnd\-DeletedProperty           \\ \bottomrule
+	\end{tabular}
+	\caption{Tests for all permutation types for renaming models}
+	\label{tab:PermutationModelTests}
+\end{center}
+\end{table}
+\end{landscape}

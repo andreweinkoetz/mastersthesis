@@ -1,2 +1,12 @@
 \section{Evaluation}
 \label{sec:Evaluation}
+For evaluating our proposed system, we use IDL documents of two consecutive Web API versions and a corresponding migration guide. The IDL documents must be manually manipulated as they only describe the latest version of a Web API. Since a machine-readable migration guide is not publicly available yet, it must be created manually to document all occuring changes. Most changes cannot be viewed in isolation, as changes to higher-level elements affect changed sub-elements. For a thorough assessment of our proposed system's capability to migrate the various changes and their permutations, we decided to perform the evaluation by manually incorporating them in the sample \texttt{Pet} \texttt{Store}\footnote{https://petstore3.swagger.io/} Web API. Therefore, its OpenAPI specification is modified to reflect the change patterns that were discovered by Li et. al \cite{li_how_2013}. Additionally, migration guides are created for each type of migratable change and permutation that provide instructions on how to overcome the breaking change. 
+
+The documentation of our results is based on the structure of the 
+\textit{Deductive Mini-Pattern} template, that focuses the outcomes of the described solution including the respective benefits and consequences \cite{brown_refactoring_1998}. The different types of changes are separated into three categories depending on their degree of automation. Furthermore, they share commonalities in the problems they cause for client applications and their developers. These problems are presented in detail for each category to clarify the necessity of their solution. In the description of the respective solution, we explain the different approaches that support client developers in migrating their application. Each solution offers individual benefits, but also has other consequences. By describing the benefits of a solution, we focus on the positive effects of our system on the reduction of the effort required for the manual migration for client developers. The consequences described serve as support for users of our system, since observing them helps preventing undesired side effects in the client application. Finally, we describe the testing procedure and the required documents used in this process.
+
+\input{content/7_CaseStudyEvaluation/2_Evaluation/1_Automated}
+\newpage
+\input{content/7_CaseStudyEvaluation/2_Evaluation/2_Semi-Automated}
+\newpage
+\input{content/7_CaseStudyEvaluation/2_Evaluation/3_Manual}

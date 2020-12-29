@@ -1,0 +1,158 @@
+\subsection{Automated Migration}\label{subsec:EvalAutomated}
+Breaking changes that belong to this category result in compile-time errors because they affect syntactical elements of the client library. They are always reflected in a Web APIs IDL document and currently require manual refactoring activities by client developers. In the course of this, client developers must consult all related documents in order to integrate the changes into their application accordingly. By using \texttt{Pallidor} with our novel machine-readable migration guide, this process can be fully automated.
+\newpage
+\begin{description}
+	\item[Category:] \textsc{Automated Migration} \newline Automating the migratory steps is based on two approaches. The first approach is to automatically adapt the client library to the changes in the migration guide. The second approach is the implementation of the separation of concerns principle through the encapsulated design of the client library.
+	\item[Problem:] All of the changes in this category require refactoring the client application. Depending on whether the client application uses a wrapper library or accesses the Web API directly via HTTP request, these changes cause an error at compile time or runtime. Breaking changes of this category are listed below:
+	\begin{itemize}
+		\item \textit{Renaming} changes of models, attributes, parameters, methods or endpoints alter the identifier of the syntax elements without modifying other related properties or their behavior. They require client developers to adapt their application to use the new identifiers. Although modern \acp{IDE} provide support for automatically renaming all occurrences of a syntax element, a client developer must manually start this process. Renaming migration tests are listed in Table \ref{tab:RenameMigrationTests}.
+		\item \textit{Replacing} changes of models, attributes, parameter and methods are reflected in the IDL document by the removal of the element. In contrast to a \textit{Removing} change, a replacement for the removed element is provided, which can be specified in other related documents. Client developers must manually inspect these documents in order to find the replacement that can be used in their application. This examination is cumbersome for Web API consumers because according to Brito et. al, providers do not use a single artifact for documenting changes \cite{brito_you_2020}. Automating the migration of a \textit{Replace} change requires Web API providers to specify the replaced element and its replacement in the machine-readable migration guide. Furthermore, they must provide algorithms for converting and reverting types of a replaced model, attribute or a methods parameters and return values using the Javascript programming language. All tests that concern replacements of all target types are listed in Table \ref{tab:ReplaceMigrationTests}.
+		\item \textit{Permutations} of changes are not described by Li et. al \cite{li_how_2013} but they introduce multiple side effects that need to be considered. For example when replacing a parameter of a method is followed by a \textit{Renaming} change of its signature, the latter must be migrated before replacing the parameter. \textit{Permutations} can occur for all types of changes with the exception of \textit{Removing} changes, because removing the parent element has the same effect on all child elements. \textit{Permutations} significantly increase the effort involved in manually migrating a client application. \texttt{Pallidor} requires Web API providers to state changes that affect others in a specific order that is shown in Table \ref{tab:ChangeOrder}.
+		\item \textit{Combining and splitting methods} extends the problem of a single replacement for a removed method. By combining the functionality of multiple methods in a single method, the parameters of the replaced methods must be combined before invoking the replacement. Its return value must be split to match the return values of the replaced methods. By splitting a single method into multiple methods, its parameters are split and the return values of all replacements must be combined before returning the result. This type of change is currently not supported by \texttt{Pallidor} but it can be extended to add this feature.
+		\item \textit{Combining and splitting parameters} are an extension of single replacements for parameters. Combining multiple independent parameters of a primitive type to a complex type can be migrated by synthesizing the new type from the previous types. This may be complemented by a change in the underlying HTTP method that allows transmitting a content body. For splitting a complex type into multiple primitive types, it must be decomposed before invoking the method.
+		\item \textit{Changing default value of parameters} does not prevent the client application from compiling as default values are only applicable to optional parameters. However, when client developers use a parameters default value, changing it can result in unexpected behavior. For example, if a parameter specifies the number of elements returned from the Web API, changing the default number affects the number of displayed elements in the UI of a client application.
+		\item \textit{Adding required parameters} or requiring a previously optional parameter change the conditions of invoking a method and must be migrated. Therefore, Web API providers must specify a default value that can be used to call the method in case no value is passed by the client developer.
+		\item \textit{Adding} models, attributes, optional parameters, methods or endpoints does not break client applications as they introduce new functionality without modifying existing services. However, these additions should be made available to client developers to extend their applications. The test cases of both adding change types are listed in Table \ref{tab:AddMigrationTests}.
+		\item \textit{Changing the underlying HTTP method} results in an error message returned by the server. Depending on the architecture of an application, this change can affect multiple files that must be modified by client developers. By encapsulating lower-level HTTP calls, this type of change only affects one file. 
+		\item \textit{Changing the servers URL or ports} result in an error message of the client application. As with changing the underlying HTTP method, the client applications architecture has a decisive influence on the effects of this change. Impacts on security systems such as firewalls are ignored in our evaluation.
+	\end{itemize}
+\newpage
+\item[Solution:] For migrating the changes of the underlying HTTP method and the servers URL or ports, we designed the architecture of the client library to automatically incorporate these changes. Therefore, the \texttt{NetworkManager} struct in the library layer encapsulates lower-level HTTP calls and contains a list of server URLs that is extracted from the OpenAPI specification. By default, the first server in the list is selected to state requests to the Web API. The library layer specifies the HTTP method that is used to query the Web APIs endpoints. The facade layer only invokes the higher-level methods of the library layer, hence the client application remains its functionality regardless of these changes in the library layer. New services are automatically integrated in the client library and do not require an entry in the migration guide.   All other changes cannot be incorporated by design and must be migrated. Therefore, \texttt{Pallidor} uses the information of the machine-readable migration guide to instantiate a \texttt{MigrationSet} that contains all \texttt{Migrations} that need to be performed. Migrating a change is executed by adapting the target syntax elements of the facade layer to incorporate the changes of the library layer.
+\item[Benefits:] By automating the refactoring process, the effort for client developers is significantly reduced. By concentrating all evolution-related information in a machine-readable migration guide the necessity of manually examining related documents of the Web API is eliminated. Client developers are able to integrate \texttt{Pallidor} into their CI workflow which ensures that their application always incorporates the latest changes of a Web API dependency. 
+\item[Consequences:] Using our solution enables client developers to operate their application on an outdated syntax of the Web API. Some changes require fallback or default values in order to be migratable and they may not contain the specific values required by the client developer. Migrations of \textit{Replacing} changes need to execute foreign code which reduces the applications performance and raises security concerns. By migrating the combination or splitting of methods instead of using the implementation of the Web API, client applications cannot benefit from potential increases in performance and efficiency.
+\item[Tested By:] All change types of this category are tested by unit tests or executable script files. Each change type is tested on a target in isolation and also in combination with other change types if this applies for the target type. In the remainder of this section, the test cases for all change types are listed in their respective table except for the \textit{Permutation} change types which can be found in the Appendix \ref{tab:PermutationAPITests} and \ref{tab:PermutationModelTests}. All tables in this section list the performed tests on each target type. The tests are either given as unit tests or they refer to a script that can be locally executed from the root directory of the \texttt{Pallidor} Swift package. They require to specify the target directory of the generated Swift files using the \texttt{-t} parameter. Each script generates separate Swift packages for the unchanged and updated version of the Web API to facilitate the comparison of the changed elements. Script files are highlighted in \textit{italic} while unit tests are prefixed with the \texttt{test} keyword.
+\end{description}
+
+New elements of a Web API are incorporated either by the design of the generated Swift package or by automatically adding them during the migration process. Adding new attributes or required parameters must be migrated as they break the client application. New functionality such as adding models, methods and endpoints is automatically integrated in the library and facade layer of the Swift package. Methods must specify a return value as described in Section \ref{subsec:PallidorGenerator}, hence return values cannot be added after publishing the Web API.
+
+\begin{table}[!ht]
+	\begin{center}
+	\begin{tabular}{@{}lp{0.18\textwidth}p{0.17\textwidth}p{0.4\textwidth}@{}}
+		\toprule
+		\textbf{Target} & \textbf{Test} & \textbf{Identifier} & \textbf{Description} \\ \midrule
+		Model           &   \textit{addModel.sh} &    \multicolumn{1}{c}{-}      &   The \texttt{ApiResponse} model gets automatically integrated in the Swift package. No migration guide is required as this is a non-breaking change. However, any replacement changes that are referencing the new type must be stated in a migration guide.  \\
+		Attribute       &   test\-Added\-Property   &    \texttt{city}      &      A new attribute is added to the \texttt{Address} model. It specifies a default value to prevent en-/decoding errors       \\
+		Endpoint        &          \textit{addEndpoint.sh} &    \multicolumn{1}{c}{-}      &            The \texttt{Store} endpoint gets automatically integrated in the Swift package. No migration guide is required as this is a non-breaking change.                               \\
+		Method        &         \textit{addMethod.sh}  &    \multicolumn{1}{c}{-}      &            New methods are automatically integrated in the respective endpoint of the facade layer.                      \\
+		Parameter       &               test\-Added\-Parameter                    &    \texttt{status}                        &       A new required parameter \texttt{status} is added to \texttt{updatePet}.             \\
+		Return Value    &            \multicolumn{1}{c}{-}  &    \multicolumn{1}{c}{-}                   &      Due to our predefined constraints, return values must be available for each method. Adding a new return value is therefore not valid.         \\ \bottomrule
+	\end{tabular}
+	\caption{Adding migrations for all target types}
+	\label{tab:AddMigrationTests}
+		\end{center}
+\end{table}
+
+Depending on whether a wrapper library is used to access the Web API or it is queried directly, renaming elements either leads to compiler errors or error messages returned from the Web API. Refactoring is performed by modifying the internals of the facade layer to use the new identifiers in the library layer. However, the public interface of the facade layer is not changed. Return values have no identifier, hence renaming them is infeasible. Changes in models affect other elements of the Web API as they are used as types by parameters, return values or attributes. In order to rename them, the Web API provider must replace the types of the affected elements accordingly.
+
+\begin{table}[!ht]
+	\begin{center}
+		\begin{tabular}{@{}lp{0.18\textwidth}lp{0.4\textwidth}@{}}
+			\toprule
+		\textbf{Target} & \textbf{Test} & \textbf{Identifier} & \textbf{Description} \\ \midrule
+			Model           &   test\-Renamed\-Model  &    \texttt{Address}     &   Renamed the \texttt{Address} model to \texttt{NewAddress}. Changing the identifier of a model requires to replace the types of all referencing elements. Therefore, also a replace change of the \texttt{address} attribute of the \texttt{Customer} model is migrated.    \\
+			Attribute       &   test\-Renamed\-Property   &  \texttt{tags} \texttt{\&} \texttt{name}      &      The attributes of  \texttt{Pet} and \texttt{Category} are renamed to \texttt{tagsi} and \texttt{namenew}.    \\
+			Endpoint        &     test\-Endpoint\-Renamed  &    \texttt{/pet}     &   The route of the Pet endpoint is changed to \texttt{/pets}. This results in a renaming change from \texttt{PetAPI} to \texttt{PetsAPI}.     \\
+			Method        &     test\-Renamed\-Method     &    \texttt{addPet}    &           The method is renamed to \texttt{addMyPet}.                            \\
+			Parameter       &               test\-Renamed\-Parameter                    &    \texttt{status}       &       The parameter of \texttt{findPetsByStatus}  is renamed to \texttt{petStatus}        \\
+			Return Value    &            \multicolumn{1}{c}{-}  &    \multicolumn{1}{c}{-}                   &      Return values do not have an identifier and hence cannot be renamed.         \\ \bottomrule
+		\end{tabular}
+		\caption{Rename migrations for all target types}
+		\label{tab:RenameMigrationTests}
+	\end{center}
+\end{table}
+\vspace{-0.5cm}
+In addition to renaming their identifiers, replacing Web API element also changes their types. In order to maintain a stable public interface of the facade layer, the previously used types must be converted to their replacement types and the replacement types must be reverted to their original types. Therefore, Web API providers must specify the respective algorithm in the migration guide using the Javascript programming language. When a method is replaced, the conversion algorithm is used to convert the parameters of the original method to an object of the parameters of its replacement. The reverting algorithm is used to convert the replacements return type back to the original return type. Replacing an endpoint cannot be specified as a dedicated change type in our migration guide. However, to replace an endpoint, its identifier can be renamed after all of its methods were replaced.
+
+		\begin{longtable}{@{}lp{0.18\textwidth}lp{0.4\textwidth}@{}}
+			\toprule
+		\textbf{Target} & \textbf{Test} & \textbf{Identifier} & \textbf{Description} \\ \midrule \endfirsthead
+		\toprule
+		\textbf{Target} & \textbf{Test} & \textbf{Identifier} & \textbf{Description} \\ \midrule \endhead
+			Model           &   test\-Replaced\-Model  &    \texttt{Order}     &   Replaced the \texttt{Order} model by \texttt{NewOrder}.  In contrast to renaming a model, algorithms for converting and reverting must be specified. Replacing a model requires to use the \texttt{Signature} target value of changes. \\
+			Attribute       &   test\-Replaced\-Property   &  \texttt{address}   &      The attribute was renamed to \texttt{addresses} and also its type is changed to \texttt{[NewAddress]}.    \\
+			Endpoint        &  \multicolumn{1}{c}{-}     &    \multicolumn{1}{c}{-}    &   Endpoints can not be directly replaced using our migration guide. Replacing an endpoint is performed by replacing all of its methods before renaming the endpoint.     \\
+			Method &    test\-Replaced\-Method   &    \texttt{updatePet} &     The method is replaced by \texttt{updateMyPet} in the \texttt{User} endpoint. Replacing a method requires to use the \texttt{Signature} target value of changes.                       \\
+			 &   test\-Replaced\-Method\-InSame\-Endpoint   &    \texttt{updatePet} &     The method is replaced by \texttt{updatePetWithForm} in the \texttt{Pet} endpoint. Replacing a method requires to use the \texttt{Signature} target value of changes.                   \\
+			Parameter       &               test\-Replaced\-Parameter                    &    \texttt{petId}       &       The parameter \texttt{petId} of \texttt{updatePetWithForm}  is replaced by \texttt{betterId}. The type of the parameter was changed from \texttt{Int} to \texttt{Double}. \\ \midrule
+			\pagebreak Return Value  &           test\-Replaced\-Return\-Value &    \texttt{addPet}                   &      The type of the return value was changed from \texttt{Pet} to \texttt{Int32}. \\  
+			    &           test\-Replaced\-Return\-Value &    \texttt{updatePet}                   &      The type of the return value was changed from \texttt{Pet} to \texttt{ApiResponse}.   \\  
+			\bottomrule
+					\caption{Replace migrations for all target types}
+			\label{tab:ReplaceMigrationTests}
+		\end{longtable}
+
+\vspace{-0.5cm}
+Permutations of the change types listed in Table \ref{tab:AddMigrationTests}, \ref{tab:RenameMigrationTests} and \ref{tab:ReplaceMigrationTests} introduce side effects that must be considered when structuring the migration guide. Since the subsequent addition of an element has no effect on existing elements and the replacement of a higher-level element takes into account all effects on its subordinate elements, we focus on permutations in which the higher-level elements are renamed. The test cases for all types of change permutations are listed in the appendix of this thesis. Table \ref{tab:PermutationAPITests} contains permutations that are affected by the renaming of an endpoint or method and by the renaming of methods in a renamed endpoint. Table \ref{tab:PermutationModelTests} lists the test cases of the effects on changes of attributes in a renamed model. 
+
+	\begin{longtable}{@{}p{0.17\textwidth}>{\raggedright\arraybackslash}p{0.34\textwidth}p{0.44\textwidth}@{}}
+		\toprule
+		\multirow{2}{0.34\textwidth}{\textbf{Renamed \newline Targets}} & \multirow{2}{0.34\textwidth}{\textbf{Order of changes}} & \multirow{2}{0.34\textwidth}{\textbf{Additional notes}} \\ 
+		  &  & \\ \midrule \endhead
+		Endpoint                   &      \vspace{-2em}\begin{enumerate}[leftmargin=*]
+			\setlength\itemsep{0.05em}
+			\item Rename change of method
+			\item Rename change of endpoint
+		\end{enumerate}           &    In order to identify the renamed method in the renamed endpoint,  the endpoints new identifier must be used in the \texttt{defined-in} property of the method object.      \\
+		                  &      \vspace{-2em}\begin{enumerate}[leftmargin=*]
+		\setlength\itemsep{0.05em}
+		\item Replace change of method (replaced method and re\-place-\newline ment in same endpoint)
+		\item Rename change of endpoint
+	\end{enumerate}           &     In order to identify the replaced method, the endpoints previous identifier must be used in the \texttt{defined-in} property of the \texttt{replaced} object.      \\
+		                  &      \vspace{-2em}\begin{enumerate}[leftmargin=*]
+	\setlength\itemsep{0.05em}
+	\item Rename change of endpoint
+	\item Remove change of method
+\end{enumerate}           &     In order to assign the removed method to the renamed endpoint, the endpoints new identifier must be used in the \texttt{defined-in} property of the method object.       \\ \midrule
+	\pagebreak	Method                   &      \vspace{-2em}\begin{enumerate}[leftmargin=*]
+		\setlength\itemsep{0.05em}
+		\item Rename change of method
+		\item Add change of parameter
+	\end{enumerate}           &     In order to identify the renamed method, its new identifier must be used in the \texttt{operation-id} property of the method object.      \\
+&      \vspace{-2em}\begin{enumerate}[leftmargin=*]
+	\setlength\itemsep{0.05em}
+	\item Replace, rename or remove change of parameter
+	\item Rename change of method
+\end{enumerate}           &     In order to identify the renamed method, its new identifier must be used in the \texttt{operation-id} property of the method object.      \\
+&      \vspace{-2em}\begin{enumerate}[leftmargin=*]
+	\setlength\itemsep{0.05em}
+	\item Replace change of return value
+	\item Rename change of method
+\end{enumerate}           &     In order to identify the renamed method, its new identifier must be used in the \texttt{operation-id} property of the method object.      \\
+		Endpoint \newline\& Method       &       \vspace{-2em}\begin{enumerate}[leftmargin=*]
+			\setlength\itemsep{0.05em}
+			\item Replace change of return value
+			\item Add, rename, replace or remove change of parameter
+			\item Rename change of method
+			\item Rename change of endpoint
+		\end{enumerate}           &     In order to identify the renamed method, its new identifier must be used in the \texttt{operation-id} property of the method object. Furthermore, to locate it in the renamed endpoint, the endpoints new identifier must be used in the \texttt{defined-in} property of the method object.  \\
+		Model                    &         \vspace{-2em}\begin{enumerate}[leftmargin=*]
+			\setlength\itemsep{0.05em}
+			\item Add, replace, rename or remove change of attribute
+			\item Rename change of model
+		\end{enumerate}           &     In order to identify the target of the attribute change, the models new identifier must be used in the \texttt{name} property of the model object.      \\ \bottomrule
+	\caption{Order of permutation changes in migration guide}
+\label{tab:ChangeOrder}
+	\end{longtable}
+
+
+\vspace{-0.5cm}
+Although our proposed system is unopinionated about the order of changes stated in the machine-readable migration guide, \texttt{Pallidor} requires a specific order to migrate permutation change types. The orders that must be observed for a specific type of permutation change are listed in Table \ref{tab:ChangeOrder}. Change types that are not specified in the migration guide such as adding a method do not affect the order of other changes.
+
+Further test of the remaining change types are shown in Table \ref{tab:OtherChangeTypesTests}. Combining and splitting methods is currently not supported by \texttt{Pallidor}. However, example test cases are specified in the \texttt{MethodMNReplaceTest.md} file that describe their migration processes including required inputs and proposed results. These test cases can be used to validate \texttt{Pallidor} after it has been extended to include their migration functionality. Migrating a change of the servers URL or ports is only considered fully automatable if the client developers accesses the server list of the \texttt{NetworkManager} struct in secure manner. For example, since at least one server must be specified in order to access the Web API, using the first entry in the list is always considered secure access.
+
+	\begin{center}
+	\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.21\textwidth}p{0.28\textwidth}p{0.4\textwidth}@{}}
+		\toprule
+		\textbf{Change} & \textbf{Test}  & \textbf{Description} \\ \midrule \endhead
+	Combining and splitting parameters &      test\-Replaced\-MN\-Parameters\-Of\-Method         &             Three parameters of \texttt{updatePetWithForm} are replaced by two parameters.             \\
+			&      test\-Replaced\-M1\-Parameters\-Of\-Method                    &         All primitive parameters of \texttt{updatePetWithForm} are replaced by one complex parameter.        \\
+			&      test\-Replaced\-1N\-Parameters\-Of\-Method                     &         One complex \texttt{Pet} parameter of \texttt{updatePet} is replaced by multiple primitive parameters.             \\
+Combining and splitting methods	&              \multicolumn{1}{c}{-}  &         Combining and splitting methods is not yet implemented by \texttt{Pallidor}. Testing this type of change is described in the \texttt{MethodMNReplaceTest.md} document in the proposed tests folder.                               \\
+Adding required parameters &    test\-Requiring\-Parameter           &   The optional parameter \texttt{status} of the \texttt{findPetsByStatus} method is now required. A default value is provided that prevents client applications from breaking.                                       \\ 
+	Changing the underlying HTTP methods	&     \textit{changeHTTPmethod.sh}         &      The underlying HTTP methods of \texttt{updatePet} and \texttt{addPet} are changed to POST and PUT.                                \\ \midrule
+	\pagebreak Changing the servers URL or ports	&    \textit{changeServerURL.sh}           &         The default server URL is changed and port 8080 instead of 443. This change modifies the server list of the \texttt{NetworkManager} struct.     \\ 
+	 Changing default value of parameters &    test\-Default\-Parameter\-Pet\-Endpoint          &   The default value of the \texttt{status} parameter of \texttt{find\-PetsByStatus} is changed from \texttt{available} to \texttt{pending}.     \\ \bottomrule
+	\caption{Further tests of various change types}
+\label{tab:OtherChangeTypesTests}	
+\end{longtable}
+\end{center}

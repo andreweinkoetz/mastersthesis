@@ -13,6 +13,13 @@ Bernd Bruegge and Allen~H. Dutoit.
   and {{Java}}}.
 \newblock {Prentice Hall}, {Boston}, 3rd ed edition, 2010.
 
+\bibitem[BMI{\etalchar{+}}98]{brown_refactoring_1998}
+William~J Brown, Raphael~C Malveau, Hays W~McCormick Iii, Thomas~J Mowbray,
+  John Wiley, Robert Ipsen, and Theresa Hudson.
+\newblock Refactoring {{Software}}, {{Architectures}}, and {{Projects}} in
+  {{Crisis}}.
+\newblock page 157, 1998.
+
 \bibitem[BVXH20]{brito_you_2020}
 Aline Brito, Marco~Tulio Valente, Laerte Xavier, and Andre Hora.
 \newblock You broke my code: Understanding the motivations for breaking changes
