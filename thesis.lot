@@ -11,14 +11,14 @@
 \contentsline {table}{\numberline {5.3}{\ignorespaces Input and output of subsystem integration tests\relax }}{47}{table.caption.55}%
 \addvspace {10\p@ }
 \contentsline {table}{\numberline {6.1}{\ignorespaces Third-party Swift packages used for subsystems in Pallidor\relax }}{51}{table.caption.58}%
-\contentsline {table}{\numberline {6.2}{\ignorespaces Adding migrations for all target types\relax }}{63}{table.caption.59}%
-\contentsline {table}{\numberline {6.3}{\ignorespaces Rename migrations for all target types\relax }}{64}{table.caption.60}%
-\contentsline {table}{\numberline {6.4}{\ignorespaces Replace migrations for all target types\relax }}{66}{table.6.4}%
-\contentsline {table}{\numberline {6.5}{\ignorespaces Order of permutation changes in migration guide\relax }}{67}{Item.34}%
-\contentsline {table}{\numberline {6.6}{\ignorespaces Further tests of various change types\relax }}{69}{table.6.6}%
+\contentsline {table}{\numberline {6.2}{\ignorespaces Adding migrations for all target types\relax }}{62}{table.6.2}%
+\contentsline {table}{\numberline {6.3}{\ignorespaces Rename migrations for all target types\relax }}{63}{table.6.3}%
+\contentsline {table}{\numberline {6.4}{\ignorespaces Replace migrations for all target types\relax }}{64}{table.6.4}%
+\contentsline {table}{\numberline {6.5}{\ignorespaces Order of permutation changes in migration guide\relax }}{66}{Item.33}%
+\contentsline {table}{\numberline {6.6}{\ignorespaces Further tests of various change types\relax }}{68}{table.6.6}%
 \contentsline {table}{\numberline {6.7}{\ignorespaces Remove migrations for all target types\relax }}{72}{table.6.7}%
 \contentsline {table}{\numberline {6.8}{\ignorespaces Further tests of semi-automatable change types\relax }}{73}{table.6.8}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {1}{\ignorespaces Tests for all permutation types for renaming endpoints and methods\relax }}{86}{table.caption.66}%
-\contentsline {table}{\numberline {2}{\ignorespaces Tests for all permutation types for renaming models\relax }}{87}{table.caption.67}%
+\contentsline {table}{\numberline {1}{\ignorespaces Tests for all permutation types for renaming endpoints and methods\relax }}{88}{table.caption.64}%
+\contentsline {table}{\numberline {2}{\ignorespaces Tests for all permutation types for renaming models\relax }}{89}{table.caption.65}%

@@ -1,8 +1,11 @@
 \chapter{Object Design}
 \label{ch:ObjectDesign}
 
-\textit{tbd..}
+During object design, we refine the system design artifact of Chapter \ref{ch:SystemDesign} to detail the specifications for each subsystem. Therefore, we define the subsystem interfaces and identify off-the-shelf components that can be reused to provide the functionality of a subsystem. Furthermore, design patterns are selected to solve common problems and ensure future extensibility of the subsystems in which they are used. The subsystem decomposition model in Figure \ref{fig:subsystemDecomposition} is restructured to reflect the changes we introduced in defining the interfaces of the subsystems to improve the maintainability of our system. Finally, we detail our test strategy, which ensures that all functional and nonfunctional requirements are met. For that, we describe the inputs and expected outputs for each subsystem and type of test to be performed. 
 
+In Section \ref{sec:Reuse}, we identify and describe off-the-shelf components and design patterns, that can be used to realize our subsystems. Since our system does not prescribe using a specific programming language, we consider multiple off-the-shelf components for each subsystem. Section \ref{sec:InterfaceSpecification} describes the specification of our subsystems' interfaces by specifying their operations and important properties. Furthermore, we define the structure of the machine-readable migration guide in detail. The class diagrams reflect the design patterns used in each case. By specifying the interfaces, potential improvements of our system model are revealed. In Section \ref{sec:Restructuring} all modifications are explained and the updated diagram of our subsystem decomposition is provided. Section \ref{sec:Testing} outlines our test strategy and details the tests to be performed as well as their corresponding inputs and expected outcomes. While our unit tests are designed to detect faults of individual subsystems and components, our integration tests define an appropriate interaction of multiple components. Our system tests are derived from the functional requirements and are used to validate the functionality of the overall system.
+
+The resulting object design model can be divided into modules that can be implemented by individual developers. It provides the foundation for an instantiation of our system, which is described and used in Chapter \ref{ch:CaseStudyEvaluation} to evaluate our approach.
 
 \newpage
 \input{content/6_ObjectDesign/1_Reuse}

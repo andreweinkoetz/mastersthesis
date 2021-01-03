@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.5.3)  29 DEC 2020 17:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.5.3)  3 JAN 2021 17:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1490,12 +1490,20 @@ l.62 \include{frontmatter/acronyms}
 
  (./frontmatter/acronyms.tex
 
-LaTeX Warning: Hyper reference `acro:XML' on page vii undefined on input line 2
-2.
+LaTeX Warning: Hyper reference `acro:HTTP' on page vii undefined on input line 
+10.
+
+
+LaTeX Warning: Hyper reference `acro:HTTP' on page vii undefined on input line 
+10.
 
 
 LaTeX Warning: Hyper reference `acro:XML' on page vii undefined on input line 2
-2.
+3.
+
+
+LaTeX Warning: Hyper reference `acro:XML' on page vii undefined on input line 2
+3.
 
 ) [7
 
@@ -1547,7 +1555,7 @@ rgest [][] di-rec-to-ries, [][]
 
 
 ] (./content/1_Introduction/1_Motivation.tex [2]
-<images/old_workflow.pdf, id=311, 442.65375pt x 412.54124pt>
+<images/old_workflow.pdf, id=312, 442.65375pt x 412.54124pt>
 File: images/old_workflow.pdf Graphic file (type pdf)
 <use images/old_workflow.pdf>
 Package pdftex.def Info: images/old_workflow.pdf  used on input line 12.
@@ -1557,7 +1565,7 @@ Package pdftex.def Info: images/old_workflow.pdf  used on input line 12.
 Package acronym Info: Label `acro:CI/CD' newly defined as it shall be overridde
 n
 although it is yet undefined on input line 4.
-<images/new_workflow.pdf, id=357, 496.85625pt x 400.49625pt>
+<images/new_workflow.pdf, id=358, 496.85625pt x 400.49625pt>
 File: images/new_workflow.pdf Graphic file (type pdf)
 <use images/new_workflow.pdf>
 Package pdftex.def Info: images/new_workflow.pdf  used on input line 8.
@@ -1592,12 +1600,6 @@ u-tion have been rarely
 
 ]
 chapter 3.
-
-Overfull \hbox (3.36775pt too wide) in paragraph at lines 8--9
-[]\T1/ppl/m/n/12 Given the cur-rent and pro-posed work-flow, mul-ti-ple func-ti
-onal and non-functional
- []
-
 [11] (./content/3_RequirementsElicitation/1_Requirements.tex
 Overfull \hbox (2.56393pt too wide) in paragraph at lines 4--5
 \T1/ppl/m/n/12 tween the sys-tem and its en-vi-ron-ment in-de-pen-dent of its i
@@ -1611,13 +1613,15 @@ sys-tem au-to-mat-i-cally re-solves
  []
 
 [12]
-<images/cd_migration_guide.pdf, id=482, 584.48361pt x 304.58954pt>
+Package acronym Info: Label `acro:CLI' newly defined as it shall be overridden
+although it is yet undefined on input line 19.
+<images/cd_migration_guide.pdf, id=488, 584.48361pt x 304.58954pt>
 File: images/cd_migration_guide.pdf Graphic file (type pdf)
 <use images/cd_migration_guide.pdf>
 Package pdftex.def Info: images/cd_migration_guide.pdf  used on input line 35.
 (pdftex.def)             Requested size: 384.1122pt x 200.17455pt.
  [13 <./images/cd_migration_guide.pdf>]
-<images/output_subsystem.pdf, id=501, 555.07375pt x 772.8875pt>
+<images/output_subsystem.pdf, id=507, 555.07375pt x 772.8875pt>
 File: images/output_subsystem.pdf Graphic file (type pdf)
 <use images/output_subsystem.pdf>
 Package pdftex.def Info: images/output_subsystem.pdf  used on input line 45.
@@ -1627,26 +1631,9 @@ LaTeX Font Info:    Trying to load font information for T1+pcr on input line 60
 .
  (/usr/local/texlive/2020/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-)
-Overfull \hbox (23.06407pt too wide) in paragraph at lines 60--61
-\T1/ppl/m/n/12 be doc-u-mented us-ing code com-ments. Doc-u-men-ta-tion will be
- auto-generated
- []
-
-
-Overfull \hbox (3.10892pt too wide) in paragraph at lines 71--72
-\T1/ppl/m/n/12 readable for-mat which web de-vel-op-ers are fa-mil-iar with. Us
--ing a domain-
- []
-
-[15]
-Overfull \hbox (1.7044pt too wide) in paragraph at lines 84--85
-\T1/ppl/m/n/12 ver-sion con-trol sys-tem to use the sys-tem as a Github ac-tion
- in their CI/CD
- []
-
-) (./content/3_RequirementsElicitation/2_UseCases.tex
-<images/usecase_consumer.pdf, id=540, 1013.7875pt x 689.57625pt>
+) [15])
+(./content/3_RequirementsElicitation/2_UseCases.tex
+<images/usecase_consumer.pdf, id=546, 1013.7875pt x 689.57625pt>
 File: images/usecase_consumer.pdf Graphic file (type pdf)
 <use images/usecase_consumer.pdf>
 Package pdftex.def Info: images/usecase_consumer.pdf  used on input line 10.
@@ -1659,12 +1646,15 @@ Overfull \hbox (14.22636pt too wide) in paragraph at lines 10--11
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[16] (./content/3_RequirementsElicitation/2_UseCases/2_IntegrateTool.tex
-Package acronym Info: Label `acro:CLI' newly defined as it shall be overridden
-although it is yet undefined on input line 23.
+[16] [17 <./images/usecase_consumer.pdf>]
+(./content/3_RequirementsElicitation/2_UseCases/2_IntegrateTool.tex
+Underfull \hbox (badness 1975) in paragraph at lines 13--14
+[]|\T1/ppl/b/n/12 Preconditions: \T1/ppl/m/n/12 The client ap-pli-ca-tion uses 
+a CI/CD
+ []
+
 LaTeX Font Info:    Trying to load font information for TS1+ppl on input line 3
 3.
-
 (/usr/local/texlive/2020/texmf-dist/tex/latex/psnfss/ts1ppl.fd
 File: ts1ppl.fd 2001/06/04 font definitions for TS1/ppl.
 )
@@ -1676,7 +1666,7 @@ Underfull \hbox (badness 3354) in paragraph at lines 34--36
 Underfull \vbox (badness 10000) detected at line 38
  []
 
-[17 <./images/usecase_consumer.pdf>])
+) [18]
 (./content/3_RequirementsElicitation/2_UseCases/1_FixClientApplication.tex
 Underfull \hbox (badness 3354) in paragraph at lines 41--43
 []\T1/ppl/m/n/12 Success: Out-put com-piles and re-quest-s/re-sponses
@@ -1686,26 +1676,22 @@ Underfull \hbox (badness 3354) in paragraph at lines 41--43
 Underfull \vbox (badness 10000) detected at line 45
  []
 
-[18])
-<images/usecase_provider.pdf, id=623, 794.3005pt x 340.27126pt>
+[19])
+<images/usecase_provider.pdf, id=638, 794.3005pt x 340.27126pt>
 File: images/usecase_provider.pdf Graphic file (type pdf)
 <use images/usecase_provider.pdf>
-Package pdftex.def Info: images/usecase_provider.pdf  used on input line 31.
+Package pdftex.def Info: images/usecase_provider.pdf  used on input line 32.
 (pdftex.def)             Requested size: 426.79134pt x 182.83511pt.
- [19]
-(./content/3_RequirementsElicitation/2_UseCases/3_ReleaseNewWebAPI.tex
+ (./content/3_RequirementsElicitation/2_UseCases/3_ReleaseNewWebAPI.tex
 Underfull \vbox (badness 10000) detected at line 39
  []
 
-[20 <./images/usecase_provider.pdf>]))
+[20 <./images/usecase_provider.pdf>])) [21]
 (./content/3_RequirementsElicitation/3_Scenarios.tex
 (./content/3_RequirementsElicitation/3_Scenarios/1_RESTScenario.tex)
-(./content/3_RequirementsElicitation/3_Scenarios/2_gRPCClient.tex [21])
-(./content/3_RequirementsElicitation/3_Scenarios/3_FuturisticGraphQL.tex)))
-Underfull \vbox (badness 4291) has occurred while \output is active []
-
- [22]
-[23]
+(./content/3_RequirementsElicitation/3_Scenarios/2_gRPCClient.tex)
+(./content/3_RequirementsElicitation/3_Scenarios/3_FuturisticGraphQL.tex
+[22]))) [23]
 \openout2 = `content/5_SystemDesign.aux'.
 
  (./content/5_SystemDesign.tex [24
@@ -1715,15 +1701,9 @@ Underfull \vbox (badness 4291) has occurred while \output is active []
 
 ]
 chapter 4.
-
-Overfull \hbox (1.81976pt too wide) in paragraph at lines 4--5
-\T1/ppl/m/n/12 After an-a-lyz-ing func-tional and non-functional re-quire-ments
-, iden-ti-fy-ing use cases
- []
-
 [25] (./content/5_SystemDesign/1_DesignGoals.tex [26]) [27]
 (./content/5_SystemDesign/2_SubsystemDecomposition.tex
-<images/subsystem_decomposition.pdf, id=725, 1034.86626pt x 1063.975pt>
+<images/subsystem_decomposition.pdf, id=728, 1034.86626pt x 1063.975pt>
 File: images/subsystem_decomposition.pdf Graphic file (type pdf)
 <use images/subsystem_decomposition.pdf>
 Package pdftex.def Info: images/subsystem_decomposition.pdf  used on input line
@@ -1737,7 +1717,7 @@ Overfull \hbox (14.22636pt too wide) in paragraph at lines 8--9
 [28 <./images/subsystem_decomposition.pdf>])
 (./content/5_SystemDesign/3_BoundaryConditions.tex [29])
 (./content/5_SystemDesign/4_HardwareSoftwareMapping.tex
-<images/subsystem_concrete.pdf, id=757, 1006.76125pt x 1372.12625pt>
+<images/subsystem_concrete.pdf, id=761, 1006.76125pt x 1372.12625pt>
 File: images/subsystem_concrete.pdf Graphic file (type pdf)
 <use images/subsystem_concrete.pdf>
 Package pdftex.def Info: images/subsystem_concrete.pdf  used on input line 8.
@@ -1798,12 +1778,12 @@ Overfull \hbox (6.0pt too wide) in paragraph at lines 37--37
  []
 
 [36]) (./content/6_ObjectDesign/2_InterfaceSpecification.tex
-<images/cd_idl_import.pdf, id=890, 496.53001pt x 171.68642pt>
+<images/cd_idl_import.pdf, id=902, 496.53001pt x 171.68642pt>
 File: images/cd_idl_import.pdf Graphic file (type pdf)
 <use images/cd_idl_import.pdf>
 Package pdftex.def Info: images/cd_idl_import.pdf  used on input line 8.
 (pdftex.def)             Requested size: 426.79134pt x 147.5793pt.
-<images/cd_sourceentity.pdf, id=893, 491.712pt x 230.20505pt>
+<images/cd_sourceentity.pdf, id=905, 491.712pt x 230.20505pt>
 File: images/cd_sourceentity.pdf Graphic file (type pdf)
 <use images/cd_sourceentity.pdf>
 Package pdftex.def Info: images/cd_sourceentity.pdf  used on input line 18.
@@ -1815,12 +1795,12 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 Package acronym Info: Label `acro:UID' newly defined as it shall be overridden
 although it is yet undefined on input line 24.
 [37 <./images/cd_idl_import.pdf>]
-<images/cd_code_import.pdf, id=992, 533.59348pt x 171.32005pt>
+<images/cd_code_import.pdf, id=1003, 533.59348pt x 171.32005pt>
 File: images/cd_code_import.pdf Graphic file (type pdf)
 <use images/cd_code_import.pdf>
 Package pdftex.def Info: images/cd_code_import.pdf  used on input line 28.
 (pdftex.def)             Requested size: 426.79134pt x 137.03531pt.
-<images/cd_migguide.pdf, id=994, 453.05258pt x 451.30104pt>
+<images/cd_migguide.pdf, id=1005, 453.05258pt x 451.30104pt>
 File: images/cd_migguide.pdf Graphic file (type pdf)
 <use images/cd_migguide.pdf>
 Package pdftex.def Info: images/cd_migguide.pdf  used on input line 38.
@@ -1849,13 +1829,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 48--48
 ws/internet-explorer/ie-
  []
 
-<images/cd_migration.pdf, id=1567, 488.06342pt x 187.05083pt>
+<images/cd_migration.pdf, id=1578, 488.06342pt x 187.05083pt>
 File: images/cd_migration.pdf Graphic file (type pdf)
 <use images/cd_migration.pdf>
 Package pdftex.def Info: images/cd_migration.pdf  used on input line 54.
 (pdftex.def)             Requested size: 426.79134pt x 163.57771pt.
 [40 <./images/cd_migration.pdf>]
-<images/cd_generation.pdf, id=1764, 519.96254pt x 239.12335pt>
+<images/cd_generation.pdf, id=1775, 519.96254pt x 239.12335pt>
 File: images/cd_generation.pdf Graphic file (type pdf)
 <use images/cd_generation.pdf>
 Package pdftex.def Info: images/cd_generation.pdf  used on input line 64.
@@ -1871,7 +1851,13 @@ Overfull \hbox (5.12018pt too wide) in paragraph at lines 70--71
 pro-gram-ming lan-guages
  []
 
-<images/cd_persisting.pdf, id=1765, 442.89467pt x 502.48929pt>
+
+Overfull \hbox (0.46631pt too wide) in paragraph at lines 70--71
+\T1/pcr/m/n/12 Code Importer \T1/ppl/m/n/12 sub-sys-tem, it takes \T1/pcr/m/n/1
+2 Modifiable \T1/ppl/m/n/12 ob-jects, i.e. wrapped \T1/pcr/m/n/12 Source-
+ []
+
+<images/cd_persisting.pdf, id=1776, 442.89467pt x 502.48929pt>
 File: images/cd_persisting.pdf Graphic file (type pdf)
 <use images/cd_persisting.pdf>
 Package pdftex.def Info: images/cd_persisting.pdf  used on input line 74.
@@ -1903,7 +1889,7 @@ he \T1/pcr/m/n/12 PersistingManager
  []
 
 [41 <./images/cd_generation.pdf>] [42 <./images/cd_persisting.pdf>]
-<images/subsystem_restructured.pdf, id=2645, 1025.8325pt x 1055.945pt>
+<images/subsystem_restructured.pdf, id=2656, 1025.8325pt x 1055.945pt>
 File: images/subsystem_restructured.pdf Graphic file (type pdf)
 <use images/subsystem_restructured.pdf>
 Package pdftex.def Info: images/subsystem_restructured.pdf  used on input line 
@@ -1961,7 +1947,7 @@ ppl/m/n/12 and \T1/pcr/m/n/12 SourceCode Importer \T1/ppl/m/n/12 sub-sys-tems.
 
  []
 
-<images/subsystem_implementation.pdf, id=2716, 1061.9675pt x 1132.23pt>
+<images/subsystem_implementation.pdf, id=2727, 1061.9675pt x 1132.23pt>
 File: images/subsystem_implementation.pdf Graphic file (type pdf)
 <use images/subsystem_implementation.pdf>
 Package pdftex.def Info: images/subsystem_implementation.pdf  used on input lin
@@ -2017,21 +2003,17 @@ Overfull \hbox (6.0pt too wide) in paragraph at lines 37--37
  []
 
 )) [58] (./content/7_CaseStudyEvaluation/2_Evaluation.tex
+Overfull \hbox (0.32028pt too wide) in paragraph at lines 5--7
+\T1/ppl/m/n/12 changes are sep-a-rated into the cat-e-gories \T1/ppl/m/sc/12 Au
+-to-mated Mi-gra-tion\T1/ppl/m/n/12 , \T1/ppl/m/sc/12 Semi-Auto-
+ []
+
 (./content/7_CaseStudyEvaluation/2_Evaluation/1_Automated.tex [59]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [60]
-[61]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [62]
-Underfull \hbox (badness 1442) in paragraph at lines 33--34
-\T1/ppl/m/n/12 any re-place-ment changes that
- []
-
-
-Underfull \hbox (badness 2065) in paragraph at lines 33--34
-\T1/ppl/m/n/12 are ref-er-enc-ing the new type
+Overfull \hbox (3.23883pt too wide) in alignment at lines 30--32
+ [] [] [] [] 
  []
 
 
@@ -2040,13 +2022,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 34--34
  []
 
 
-Underfull \hbox (badness 1259) in paragraph at lines 34--35
-\T1/pcr/m/n/12 Address \T1/ppl/m/n/12 model. It spec-i-fies
- []
-
-
-Underfull \hbox (badness 1960) in paragraph at lines 35--36
-\T1/ppl/m/n/12 is re-quired as this is a non-
+Underfull \hbox (badness 1552) in paragraph at lines 34--35
+[]|\T1/ppl/m/n/12 A new at-tribute is added to the
  []
 
 
@@ -2055,73 +2032,48 @@ Underfull \hbox (badness 10000) in paragraph at lines 37--37
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 37--38
-[]|\T1/ppl/m/n/12 A new re-quired pa-ram-
+Overfull \hbox (3.23883pt too wide) in alignment at lines 32--41
+ [] [] [] [] 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 37--38
-\T1/ppl/m/n/12 e-ter \T1/pcr/m/n/12 status \T1/ppl/m/n/12 is added to
- []
-
-
-Underfull \hbox (badness 5091) in paragraph at lines 38--38
-[]|\T1/ppl/m/n/12 Due to our pre-de-fined con-
- []
-
-
-Underfull \hbox (badness 7963) in paragraph at lines 38--38
-\T1/ppl/m/n/12 straints, re-turn val-ues must
- []
-
-[63]
-Underfull \hbox (badness 10000) in paragraph at lines 52--52
-[]|\T1/ppl/m/n/12 test-Renamed-
- []
-
-
-Underfull \hbox (badness 4832) in paragraph at lines 52--53
-\T1/ppl/m/n/12 to \T1/pcr/m/n/12 NewAddress\T1/ppl/m/n/12 . Chang-ing
- []
-
-
-Underfull \hbox (badness 2359) in paragraph at lines 52--53
-\T1/ppl/m/n/12 the iden-ti-fier of a model re-
- []
-
-
-Underfull \hbox (badness 1803) in paragraph at lines 52--53
-\T1/ppl/m/n/12 the \T1/pcr/m/n/12 address \T1/ppl/m/n/12 at-tribute of the
- []
-
-
+[61]
 Underfull \hbox (badness 10000) in paragraph at lines 53--53
 []|\T1/ppl/m/n/12 test-Renamed-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 53--54
-[]|\T1/ppl/m/n/12 The at-tributes of \T1/pcr/m/n/12 Pet \T1/ppl/m/n/12 and
+Underfull \hbox (badness 4832) in paragraph at lines 53--54
+\T1/ppl/m/n/12 to \T1/pcr/m/n/12 NewAddress\T1/ppl/m/n/12 . Chang-ing
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 53--54
-\T1/pcr/m/n/12 Category \T1/ppl/m/n/12 are re-named to
+Underfull \hbox (badness 2359) in paragraph at lines 53--54
+\T1/ppl/m/n/12 the iden-ti-fier of a model re-
+ []
+
+
+Underfull \hbox (badness 1803) in paragraph at lines 53--54
+\T1/ppl/m/n/12 the \T1/pcr/m/n/12 address \T1/ppl/m/n/12 at-tribute of the
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 54--54
-[]|\T1/ppl/m/n/12 test-Endpoint-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 55--55
 []|\T1/ppl/m/n/12 test-Renamed-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 55--56
-[]|\T1/ppl/m/n/12 The method is re-named to
+Underfull \hbox (badness 10000) in paragraph at lines 54--55
+[]|\T1/ppl/m/n/12 The at-tributes of \T1/pcr/m/n/12 Pet \T1/ppl/m/n/12 and
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 54--55
+\T1/pcr/m/n/12 Category \T1/ppl/m/n/12 are re-named to
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 55--55
+[]|\T1/ppl/m/n/12 test-Endpoint-
  []
 
 
@@ -2131,57 +2083,42 @@ Underfull \hbox (badness 10000) in paragraph at lines 56--56
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 56--57
+[]|\T1/ppl/m/n/12 The method is re-named to
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 57--57
+[]|\T1/ppl/m/n/12 test-Renamed-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 57--58
 []|\T1/ppl/m/n/12 The pa-ram-e-ter of
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 56--57
+Underfull \hbox (badness 10000) in paragraph at lines 57--58
 \T1/pcr/m/n/12 findPetsByStatus \T1/ppl/m/n/12 is re-
  []
 
-[64]
-Underfull \hbox (badness 10000) in paragraph at lines 71--71
-[]|\T1/ppl/m/n/12 test-Replaced-
- []
-
-
+[62]
 Underfull \hbox (badness 10000) in paragraph at lines 72--72
 []|\T1/ppl/m/n/12 test-Replaced-
  []
 
 
-Underfull \hbox (badness 2547) in paragraph at lines 73--74
+Underfull \hbox (badness 10000) in paragraph at lines 73--73
+[]|\T1/ppl/m/n/12 test-Replaced-
+ []
+
+
+Underfull \hbox (badness 2547) in paragraph at lines 74--75
 \T1/ppl/m/n/12 re-placed us-ing our mi-gra-tion
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 74--74
-[]|\T1/ppl/m/n/12 test-Replaced-
- []
-
-
-Underfull \hbox (badness 7397) in paragraph at lines 74--75
-[]|\T1/ppl/m/n/12 The method is re-placed by
- []
-
-
-Underfull \hbox (badness 1077) in paragraph at lines 74--75
-\T1/ppl/m/n/12 quires to use the \T1/pcr/m/n/12 Signature
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 75--75
 []|\T1/ppl/m/n/12 test-Replaced-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 75--75
-\T1/ppl/m/n/12 Method-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 75--75
-\T1/ppl/m/n/12 InSame-
  []
 
 
@@ -2190,23 +2127,8 @@ Underfull \hbox (badness 7397) in paragraph at lines 75--76
  []
 
 
-Underfull \hbox (badness 7504) in paragraph at lines 75--76
-\T1/pcr/m/n/12 updatePetWithForm \T1/ppl/m/n/12 in the
- []
-
-
-Underfull \hbox (badness 3417) in paragraph at lines 75--76
-\T1/pcr/m/n/12 Pet \T1/ppl/m/n/12 end-point. Re-plac-ing a
- []
-
-
-Underfull \hbox (badness 6741) in paragraph at lines 75--76
-\T1/ppl/m/n/12 method re-quires to use the
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 75--76
-\T1/pcr/m/n/12 Signature \T1/ppl/m/n/12 tar-get value of
+Underfull \hbox (badness 1077) in paragraph at lines 75--76
+\T1/ppl/m/n/12 quires to use the \T1/pcr/m/n/12 Signature
  []
 
 
@@ -2216,12 +2138,37 @@ Underfull \hbox (badness 10000) in paragraph at lines 76--76
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 76--76
-[]|\T1/ppl/m/n/12 The pa-ram-e-ter \T1/pcr/m/n/12 petId \T1/ppl/m/n/12 of
+\T1/ppl/m/n/12 Method-
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 76--76
-\T1/pcr/m/n/12 updatePetWithForm \T1/ppl/m/n/12 is re-
+\T1/ppl/m/n/12 InSame-
+ []
+
+
+Underfull \hbox (badness 7397) in paragraph at lines 76--77
+[]|\T1/ppl/m/n/12 The method is re-placed by
+ []
+
+
+Underfull \hbox (badness 7504) in paragraph at lines 76--77
+\T1/pcr/m/n/12 updatePetWithForm \T1/ppl/m/n/12 in the
+ []
+
+
+Underfull \hbox (badness 3417) in paragraph at lines 76--77
+\T1/pcr/m/n/12 Pet \T1/ppl/m/n/12 end-point. Re-plac-ing a
+ []
+
+
+Underfull \hbox (badness 6741) in paragraph at lines 76--77
+\T1/ppl/m/n/12 method re-quires to use the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 76--77
+\T1/pcr/m/n/12 Signature \T1/ppl/m/n/12 tar-get value of
  []
 
 
@@ -2230,117 +2177,123 @@ Underfull \hbox (badness 10000) in paragraph at lines 77--77
  []
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 77--78
+[]|\T1/ppl/m/n/12 The pa-ram-e-ter \T1/pcr/m/n/12 petId \T1/ppl/m/n/12 of
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 77--78
+\T1/pcr/m/n/12 updatePetWithForm \T1/ppl/m/n/12 is re-
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 78--78
 []|\T1/ppl/m/n/12 test-Replaced-
  []
 
 
-Underfull \hbox (badness 1558) in paragraph at lines 78--79
+Underfull \hbox (badness 10000) in paragraph at lines 79--79
+[]|\T1/ppl/m/n/12 test-Replaced-
+ []
+
+
+Underfull \hbox (badness 1558) in paragraph at lines 79--80
 []|\T1/ppl/m/n/12 The type of the re-turn value
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 78--79
+Underfull \hbox (badness 10000) in paragraph at lines 79--80
 \T1/ppl/m/n/12 was changed from \T1/pcr/m/n/12 Pet \T1/ppl/m/n/12 to
  []
 
-[65]
-Overfull \hbox (72.55374pt too wide) in paragraph at lines 89--89
+[63]
+Overfull \hbox (2.29941pt too wide) in paragraph at lines 85--86
+[]\T1/ppl/m/n/12 In ad-di-tion to re-nam-ing their iden-ti-fiers, re-plac-ing W
+eb API el-e-ments also changes
+ []
+
+[64]
+Overfull \hbox (72.55374pt too wide) in paragraph at lines 91--91
 []|[]| 
  []
 
 
-Overfull \hbox (2.6591pt too wide) in alignment at lines 87--90
+Overfull \hbox (2.6591pt too wide) in alignment at lines 89--92
  [] [] [] 
  []
 
 
-Underfull \hbox (badness 2951) in paragraph at lines 100--101
+Underfull \hbox (badness 2951) in paragraph at lines 102--103
 \T1/ppl/m/n/12 method, the end-points pre-vi-ous
  []
 
 
-Underfull \hbox (badness 4634) in paragraph at lines 100--101
+Underfull \hbox (badness 4634) in paragraph at lines 102--103
 \T1/ppl/m/n/12 iden-ti-fier must be used in the
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--101
+Underfull \hbox (badness 10000) in paragraph at lines 102--103
 \T1/pcr/m/n/12 defined-in \T1/ppl/m/n/12 prop-erty of the
  []
 
 
-Underfull \hbox (badness 2181) in paragraph at lines 105--105
+Underfull \hbox (badness 2181) in paragraph at lines 107--108
 []|\T1/ppl/m/n/12 In or-der to as-sign the re-moved
  []
 
 
-Underfull \hbox (badness 1490) in paragraph at lines 127--128
+Underfull \hbox (badness 1490) in paragraph at lines 125--126
 \T1/ppl/m/n/12 ther-more, to lo-cate it in the re-
  []
 
 
-Underfull \hbox (badness 4595) in paragraph at lines 127--128
+Underfull \hbox (badness 4595) in paragraph at lines 125--126
 \T1/ppl/m/n/12 named end-point, the end-points
  []
 
 
-Underfull \hbox (badness 2478) in paragraph at lines 127--128
+Underfull \hbox (badness 2478) in paragraph at lines 125--126
 \T1/ppl/m/n/12 new iden-ti-fier must be used in
  []
 
 
-Overfull \hbox (2.6591pt too wide) in alignment at lines 90--135
+Overfull \hbox (2.6591pt too wide) in alignment at lines 92--133
  [] [] [] 
  []
 
-[66]
-Overfull \hbox (3.58398pt too wide) in paragraph at lines 139--140
+[65]
+Overfull \hbox (3.58398pt too wide) in paragraph at lines 137--138
 []\T1/ppl/m/n/12 Although our pro-posed sys-tem is un-opin-ion-ated about the o
 r-der of changes stated
  []
 
 
-Underfull \vbox (badness 1226) has occurred while \output is active []
+Underfull \vbox (badness 3590) has occurred while \output is active []
 
- [67]
-Underfull \hbox (badness 10000) in paragraph at lines 147--147
-[]|\T1/ppl/m/n/12 test-Replaced-MN-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 147--148
-[]|\T1/ppl/m/n/12 Three pa-ram-e-ters of
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 147--148
-\T1/pcr/m/n/12 updatePetWithForm \T1/ppl/m/n/12 are
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 148--148
-[]|\T1/ppl/m/n/12 test-Replaced-M1-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 148--149
-[]|\T1/ppl/m/n/12 All prim-i-tive pa-ram-e-ters of
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 148--149
-\T1/pcr/m/n/12 updatePetWithForm \T1/ppl/m/n/12 are
- []
-
-
-Underfull \hbox (badness 1668) in paragraph at lines 148--149
-\T1/ppl/m/n/12 re-placed by one com-plex pa-
- []
-
-
+ [66]
 Underfull \hbox (badness 10000) in paragraph at lines 149--149
-[]|\T1/ppl/m/n/12 test-Replaced-1N-
+[]|\T1/ppl/m/n/12 test-Requiring-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 149--150
+\T1/ppl/m/n/12 of the \T1/pcr/m/n/12 findPetsByStatus
+ []
+
+
+Underfull \hbox (badness 1571) in paragraph at lines 149--150
+\T1/ppl/m/n/12 method is now re-quired. A
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 149--150
+\T1/ppl/m/n/12 pre-vents client ap-pli-ca-tions
+ []
+
+
+Underfull \hbox (badness 1454) in paragraph at lines 150--151
+\T1/ppl/m/sc/12 Pal-li-dor\T1/ppl/m/n/12 . Test-ing this type
  []
 
 
@@ -2355,37 +2308,42 @@ Underfull \hbox (badness 10000) in paragraph at lines 150--151
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 151--151
-[]|\T1/ppl/m/n/12 test-Requiring-
+[]|\T1/ppl/m/n/12 test-Replaced-MN-
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 151--152
-\T1/ppl/m/n/12 of the \T1/pcr/m/n/12 findPetsByStatus
- []
-
-
-Underfull \hbox (badness 1571) in paragraph at lines 151--152
-\T1/ppl/m/n/12 method is now re-quired. A
+[]|\T1/ppl/m/n/12 Three pa-ram-e-ters of
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 151--152
-\T1/ppl/m/n/12 pre-vents client ap-pli-ca-tions
+\T1/pcr/m/n/12 updatePetWithForm \T1/ppl/m/n/12 are
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 153--154
-[]|\T1/ppl/m/n/12 The de-fault server URL is
+Underfull \hbox (badness 10000) in paragraph at lines 152--152
+[]|\T1/ppl/m/n/12 test-Replaced-M1-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 153--154
-\T1/ppl/m/n/12 changed and port 8080 in-
+Underfull \hbox (badness 10000) in paragraph at lines 152--153
+[]|\T1/ppl/m/n/12 All prim-i-tive pa-ram-e-ters of
  []
 
 
-Underfull \hbox (badness 4254) in paragraph at lines 153--154
-\T1/ppl/m/n/12 stead of 443. This change
+Underfull \hbox (badness 10000) in paragraph at lines 152--153
+\T1/pcr/m/n/12 updatePetWithForm \T1/ppl/m/n/12 are
+ []
+
+
+Underfull \hbox (badness 1668) in paragraph at lines 152--153
+\T1/ppl/m/n/12 re-placed by one com-plex pa-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 153--153
+[]|\T1/ppl/m/n/12 test-Replaced-1N-
  []
 
 
@@ -2394,39 +2352,33 @@ Underfull \hbox (badness 10000) in paragraph at lines 154--154
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 154--154
+Underfull \hbox (badness 10000) in paragraph at lines 154--155
 []|\T1/ppl/m/n/12 The de-fault value of the
  []
 
 
-Underfull \hbox (badness 3260) in paragraph at lines 154--154
+Underfull \hbox (badness 3260) in paragraph at lines 154--155
 \T1/pcr/m/n/12 status \T1/ppl/m/n/12 pa-ram-e-ter of \T1/pcr/m/n/12 find-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 154--154
+Underfull \hbox (badness 10000) in paragraph at lines 154--155
 \T1/pcr/m/n/12 PetsByStatus \T1/ppl/m/n/12 is changed
  []
 
-[68]) [69] (./content/7_CaseStudyEvaluation/2_Evaluation/2_Semi-Automated.tex
-Overfull \hbox (0.68094pt too wide) in paragraph at lines 12--13
-\T1/ppl/m/n/12 There-fore, their providers must spec-ify and main-tain a mi-gra
--tion guide
+
+Underfull \hbox (badness 10000) in paragraph at lines 156--156
+[]|\T1/ppl/m/n/12 The de-fault server URL is
  []
 
-
-Underfull \vbox (badness 4792) has occurred while \output is active []
-
- [70]
-Overfull \hbox (0.483pt too wide) in paragraph at lines 15--16
+[67] [68]) [69]
+(./content/7_CaseStudyEvaluation/2_Evaluation/2_Semi-Automated.tex
+Overfull \hbox (0.483pt too wide) in paragraph at lines 15--15
 []\T1/ppl/m/n/12 Although the changes can-not be au-to-mat-i-cally mi-grated, o
 ur pro-posed
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [71]
+[70]
 Overfull \hbox (5.61299pt too wide) in alignment at lines 23--25
  [] [] [] [] 
  []
@@ -2466,95 +2418,92 @@ Overfull \hbox (5.61299pt too wide) in alignment at lines 25--34
  [] [] [] [] 
  []
 
+[71]
+Overfull \hbox (2.79321pt too wide) in paragraph at lines 37--38
+\T1/ppl/m/n/12 Web API providers can spec-ify fall-back val-ues for \T1/pcr/m/n
+/12 Parameters \T1/ppl/m/n/12 and \T1/pcr/m/n/12 Attributes
+ []
+
 [72]
-Underfull \hbox (badness 10000) in paragraph at lines 43--44
-[]|\T1/ppl/m/n/12 The method \T1/pcr/m/n/12 placeOrder
+Overfull \hbox (2.6591pt too wide) in alignment at lines 48--50
+ [] [] [] 
  []
 
 
-Underfull \hbox (badness 1286) in paragraph at lines 43--44
-\T1/ppl/m/n/12 now re-quires users to be au-
+Underfull \hbox (badness 10000) in paragraph at lines 51--52
+[]|\T1/ppl/m/n/12 The pa-ram-e-ter \T1/pcr/m/n/12 orderId \T1/ppl/m/n/12 of the
+
  []
 
 
-Underfull \hbox (badness 2080) in paragraph at lines 43--44
-\T1/ppl/m/n/12 then-ti-cated while the method
+Underfull \hbox (badness 10000) in paragraph at lines 51--52
+\T1/pcr/m/n/12 getOrderById \T1/ppl/m/n/12 method changed
  []
 
 
-Underfull \hbox (badness 1484) in paragraph at lines 43--44
-\T1/pcr/m/n/12 updatePet \T1/ppl/m/n/12 is pub-licly ac-ces-
+Underfull \hbox (badness 1668) in paragraph at lines 51--52
+\T1/ppl/m/n/12 its bound-aries from ac-cept-ing val-ues
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 43--44
-\T1/ppl/m/n/12 si-ble with-out au-then-ti-cat-ing.
+Underfull \hbox (badness 3229) in paragraph at lines 52--53
+\T1/ppl/m/n/12 users to be au-then-ti-cated while the
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 44--45
-[]|\T1/ppl/m/n/12 The pa-ram-e-ter \T1/pcr/m/n/12 orderId \T1/ppl/m/n/12 of
+Underfull \hbox (badness 3386) in paragraph at lines 52--53
+\T1/ppl/m/n/12 si-ble with-out au-then-ti-cat-ing. Their
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 44--45
-\T1/ppl/m/n/12 the \T1/pcr/m/n/12 getOrderById \T1/ppl/m/n/12 method
+Underfull \hbox (badness 1540) in paragraph at lines 52--53
+\T1/pcr/m/n/12 authorization \T1/ppl/m/n/12 pa-ram-e-ters changed
  []
 
 
-Underfull \hbox (badness 4144) in paragraph at lines 44--45
-\T1/ppl/m/n/12 changed its bound-aries from
+Overfull \hbox (2.6591pt too wide) in alignment at lines 50--57
+ [] [] [] 
  []
 
-
-Underfull \hbox (badness 1430) in paragraph at lines 45--46
-[]|\T1/ppl/m/n/12 Currently un-sup-ported. Fur-
- []
-
-) [73] (./content/7_CaseStudyEvaluation/2_Evaluation/3_Manual.tex))) [74]
+) [73] (./content/7_CaseStudyEvaluation/2_Evaluation/3_Manual.tex [74])))
+[75]
 \openout2 = `content/8_Summary.aux'.
 
+ (./content/8_Summary.tex [76
 
-(./content/8_Summary.tex
+
+
+
+]
 chapter 7.
 (./content/8_Summary/1_Conclusion.tex) (./content/8_Summary/2_FutureWork.tex))
-[75
+[77] [78
 
 
 
-
-] [76
-
-
-
-] (./thesis.lof
-Overfull \hbox (26.86688pt too wide) in paragraph at lines 24--24
- \T1/ppl/m/n/12 sub-sys-tem was ex-tracted from the \T1/pcr/m/n/12 Migration Ma
-nager \T1/ppl/m/n/12 and \T1/pcr/m/n/12 Library 
- []
-
-)
+] (./thesis.lof)
 \tf@lof=\write6
 \openout6 = `thesis.lof'.
 
- [77
+ [79
 
 
-] [78
+] [80
 
 
 ] (./thesis.lot)
 \tf@lot=\write7
 \openout7 = `thesis.lot'.
 
- [79] [80
+ [81] [82
 
 
 ] (./thesis.lol)
 \tf@lol=\write8
 \openout8 = `thesis.lol'.
 
- (./thesis.bbl [81] [82
+
+(./thesis.bbl [83] [84
 
 
 ]
@@ -2565,13 +2514,13 @@ Underfull \hbox (badness 1072) in paragraph at lines 17--22
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [83])
-[84]
+ [85])
+[86]
 \openout2 = `appendix/appendixExample.aux'.
 
  (./appendix/appendixExample.tex
 chapter without number
-[85
+[87
 
 
 
@@ -3050,7 +2999,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 12--12
 \T1/ppl/m/n/10.95 Replaced-
  []
 
-[86]
+[88]
 Overfull \hbox (9.31407pt too wide) in paragraph at lines 27--27
 []|\T1/ppl/b/n/12 Renamed 
  []
@@ -3095,7 +3044,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 29--29
 \T1/ppl/m/n/12 ModelAnd-
  []
 
-[87
+[89
 
 
 
@@ -3120,10 +3069,10 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 39914 strings out of 480608
- 885331 string characters out of 5903631
- 1553812 words of memory out of 5000000
- 54364 multiletter control sequences out of 15000+600000
+ 39922 strings out of 480608
+ 885379 string characters out of 5903631
+ 1559812 words of memory out of 5000000
+ 54368 multiletter control sequences out of 15000+600000
  583100 words of font info for 106 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  67i,12n,105p,10124b,2802s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -3135,10 +3084,10 @@ dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2020/texmf-dist/fo
 nts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/typ
 e1/urw/palatino/uplr8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/urw/
 palatino/uplri8a.pfb>
-Output written on thesis.pdf (101 pages, 2488125 bytes).
+Output written on thesis.pdf (103 pages, 2498138 bytes).
 PDF statistics:
- 3367 PDF objects out of 3580 (max. 8388607)
- 2578 compressed objects within 26 object streams
- 467 named destinations out of 1000 (max. 500000)
+ 3393 PDF objects out of 3580 (max. 8388607)
+ 2601 compressed objects within 27 object streams
+ 471 named destinations out of 1000 (max. 500000)
  447 words of extra memory for PDF output out of 10000 (max. 10000000)
 
