@@ -1,0 +1,34 @@
+{
+       "lang" : "Swift",
+       "summary" : "This is a summary of what changed between versions",
+       "api-spec": "OpenAPI",
+       "api-type": "REST",
+       "from-version" : "0.0.1b",
+       "to-version" : "0.0.2",
+       "changes" : [
+           {
+               "reason": "Renamed operation and removed subpath.",
+               "object" : {
+                   "operation-id" : "getPetById",
+                   "defined-in" : "/pet"
+               },
+               "target" : "Signature",
+               "original-id" : "getPetWithId"
+           },
+           {
+              "reason": "Only return the user id for privacy reasons.",
+              "object":{
+                 "operation-id":"createUser",
+                 "defined-in":"/user"
+              },
+              "target":"ReturnValue",
+              "replacement-id":"_",
+              "type":"Int32",
+              "custom-revert":"function conversion(response) { return JSON.stringify({ 'email' : 'new@email.de', 'firstName' : 'New', 'lastName': 'User', 'id' : response, 'userStatus': 1, 'username': 'new@email.de' })}",
+              "replaced":{
+                 "name":"_",
+                 "type":"User"
+              }
+           }
+       ]
+   }
